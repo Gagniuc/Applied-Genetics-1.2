@@ -1,0 +1,142 @@
+
+<!-- *** Part 1 *** -->
+
+<!--Simply copy and paste this part into <HEAD>  </HEAD>.-->
+
+<style>
+<!--
+#leftright, #topdown{
+position:absolute;
+left:0;
+top:0;
+width:1px;
+height:1px;
+layer-background-color:black;
+background-color:black;
+z-index:100;
+font-size:1px;
+}
+-->
+</style>
+
+
+<!-- *** Part 2 *** -->
+
+<!--Simply copy and paste this part into <BODY>  </BODY>.-->
+
+<div id="leftright" style="width:expression(document.body.clientWidth-2)"></div>
+<div id="topdown" style="height:expression(document.body.clientHeight-2)"></div>
+
+<script language="JavaScript1.2">
+<!--
+
+if (document.all&&!window.print){
+leftright.style.width=document.body.clientWidth-2
+topdown.style.height=document.body.clientHeight-2
+}
+else if (document.layers){
+document.leftright.clip.width=window.innerWidth
+document.leftright.clip.height=1
+document.topdown.clip.width=1
+document.topdown.clip.height=window.innerHeight
+}
+
+
+function followmouse1(){
+//move cross engine for IE 4+
+leftright.style.pixelTop=document.body.scrollTop+event.clientY+1
+topdown.style.pixelTop=document.body.scrollTop
+if (event.clientX<document.body.clientWidth-2)
+topdown.style.pixelLeft=document.body.scrollLeft+event.clientX+1
+else
+topdown.style.pixelLeft=document.body.clientWidth-2
+}
+
+function followmouse2(e){
+//move cross engine for NS 4+
+document.leftright.top=e.y+1
+document.topdown.top=pageYOffset
+document.topdown.left=e.x+1
+}
+
+if (document.all)
+document.onmousemove=followmouse1
+else if (document.layers){
+window.captureEvents(Event.MOUSEMOVE)
+window.onmousemove=followmouse2
+}
+
+function regenerate(){
+window.location.reload()
+}
+function regenerate2(){
+setTimeout("window.onresize=regenerate",400)
+}
+if ((document.all&&!window.print)||document.layers)
+//if the user is using IE 4 or NS 4, both NOT IE 5+
+window.onload=regenerate2
+
+/*
+Document crosshair Script- 
+By Dynamic Drive (www.dynamicdrive.com)
+For full source code, installation instructions,
+100's more free DHTML scripts, and Terms Of
+Use, visit dynamicdrive.com
+*/
+
+//-->
+</script>
+
+
+
+<STYLE type=text/css>#topbar {
+	BORDER-RIGHT: black 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: black 1px solid; PADDING-LEFT: 2px; Z-INDEX: 100; VISIBILITY: hidden; PADDING-BOTTOM: 2px; BORDER-LEFT: black 1px solid; WIDTH: 250px; PADDING-TOP: 2px; BORDER-BOTTOM: black 1px solid; POSITION: absolute; BACKGROUND-COLOR: lightyellow
+}
+</STYLE>
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<STYLE type=text/css>#topbar {
+	BORDER-RIGHT: black 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: black 1px solid; PADDING-LEFT: 2px; Z-INDEX: 100; VISIBILITY: hidden; PADDING-BOTTOM: 2px; BORDER-LEFT: black 1px solid; WIDTH: 250px; PADDING-TOP: 2px; BORDER-BOTTOM: black 1px solid; POSITION: absolute; BACKGROUND-COLOR: lightyellow
+}
+</STYLE>
+
+<SCRIPT src="omg.js" type=text/javascript></SCRIPT>
+
+<META content="MSHTML 6.00.6000.16481" name=GENERATOR></HEAD>
+<BODY>
+<DIV id=dropin 
+style="BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; LEFT: 200px; VISIBILITY: hidden; BORDER-LEFT: black 1px solid; WIDTH: 500px; BORDER-BOTTOM: black 1px solid; POSITION: absolute; TOP: 100px; HEIGHT: 300px; BACKGROUND-COLOR: #f1f1f1" 
+onclick="dismissbox();return false">
+<DIV align=right><A onclick="dismissbox();return false" 
+href="file:///#"><FONT 
+color=#343434>[X] </FONT></A></DIV>
+<CENTER><FONT color=#454545><B>Universitatea Bucuresti</B></FONT><BR>
+<HR>
+<FONT color=#757575 size=5>Applied Genetics v 1.2<BR>Institutul de Genetica</FONT><BR><BR><IMG 
+height=150 src="cutie_verde.png" border=2></CENTER><BR>
+<HR>
+</DIV>
+<DIV id=topbar>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD><A onclick="closebar(); return false" 
+      href="file:////"><IMG 
+      src="jos_verde.png" border=0></A></TD>
+    <TD>
+      <FORM name=form1 
+      onsubmit="search(document.form1, frametosearch); return false"><INPUT 
+      title="Scriesti cultivatorul de interes si apasati Cauta !" size=15 
+      name=findthis><INPUT accessKey=s type=submit value="Cauta !"></FORM></TD></TR></TBODY></TABLE></DIV>
+
+
+
+<script>
+function injectare(secventa)
+{
+document.form1.findthis.value = secventa;
+}
+</script>
