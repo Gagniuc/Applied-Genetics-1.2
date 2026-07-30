@@ -486,3 +486,19 @@ No explicit software license is included in the analyzed historical archives. Un
 ---
 
 Applied Genetics 1.2 is preserved as a record of early Windows-based bioinformatics software: a complete, highly visual VB6 environment in which sequence editing, genetic-code processing, restriction analysis, motif discovery, and gel simulation were integrated into one application.
+
+## Video demonstration
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=nmyNR0VMKF0">
+    <img src="https://img.youtube.com/vi/nmyNR0VMKF0/maxresdefault.jpg"
+         alt="Applied Genetics 1.2 — Video Demonstration"
+         width="800">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=nmyNR0VMKF0">
+    ▶ Watch the Applied Genetics 1.2 demonstration on YouTube
+  </a>
+</p>
