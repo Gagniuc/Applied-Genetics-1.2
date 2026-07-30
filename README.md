@@ -10,9 +10,14 @@
 **Applied Genetics 1.2** is a native Windows application developed for the interactive examination of nucleotide sequences. It combines sequence editing, exact motif detection, restriction-enzyme analysis, codon translation, direct- and inverse-repeat discovery, primer melting-temperature estimation, graphical sequence annotation, and a simplified agarose-gel simulation in a single desktop interface.
 
 
-![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/screen%20(I).jpg)
+![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/load.png)
+
 
 The original program was created in the academic environment of the **University of Bucharest, Institute of Genetics**, during 2008–2009. The source was later recovered and adapted for modern 32-bit VB6 execution under Windows 11, while preserving the original interface, algorithms, project format, terminology, and historical shareware subsystem.
+
+![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/DSC06700.JPG)
+
+<hr>
 
 ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/DVD%20(II).png)
 
@@ -43,6 +48,8 @@ Each principal source tree contains approximately **70 files**, including **43 V
 ### 1. Interactive sequence workspace
 
 The main window is built around a large RichTextBox used for nucleotide input and annotation. A sequence can be entered manually, pasted, loaded from an Applied Genetics project, or imported from a GenBank-style flat file.
+
+![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/screen%20(I).jpg)
 
 The workspace provides:
 
