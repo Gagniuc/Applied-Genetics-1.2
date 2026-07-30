@@ -63,6 +63,12 @@ The search is exhaustive. Its running time rises quickly as the maximum motif le
 
 The **R.S. / S.R.** module uses a related generator to find exact tandem repeats. The user chooses the motif-length interval and the allowed number of consecutive repetitions. Matching regions are coloured in the editor and described in OUTPUT. The original algorithm does not allow mismatches, gaps or approximate repeat scoring.
 
+## Gene and inverse-sequence details
+
+The Gene panel also allows AUG codons to be delimited independently and lets the user define the text inserted at START and STOP positions. Ordinary codons can be displayed using alternating colours historically labelled as exon and intron colours.
+
+For each inverse-sequence match, the program records the position and length of the first motif, the position and length of the intervening sequence, and the position of the reversed motif. The result includes both a textual representation and a graphical strip showing the two motifs and the region between them. During processing, the status area displays the current generated combination, the total number of combinations and the number of combinations tested per second.
+
 ## Primer and probe estimates
 
 For a selected sequence, the program calculates the `G+C` percentage and estimates the melting temperature. Short selections are labelled as primers and longer selections as probes. The first formula is the familiar simple approximation:
@@ -199,6 +205,14 @@ The two values were compared at startup. If they matched, the counter was increm
 Registration was based on a username and a corresponding activation code. The activation window validated the entered pair and, when accepted, stored the registration information in an encrypted file named `ag_exp.001`. On later launches, the program checked this file before displaying the trial counter. A valid registration allowed the application to start without consuming one of the remaining trial runs.
 
 The trial interface, activation-code generator, encryption routines, and related validation classes are preserved in the source code because they formed part of the original software architecture. They are useful for studying historical shareware protection techniques, but they should not be considered secure licensing methods for current software. The implementation relies on writable Registry entries, local files, reversible custom encryption, and Windows paths that may require elevated permissions on modern systems.
+
+## Original CD distribution kit
+
+The repository also preserves the presentation layer of the original CD edition. The `CD Interfata` directory contains the Visual Basic 6 project used for the disc launcher, while the `img` directory includes the surviving CD covers, disc artwork and other visual material associated with the physical release.
+
+The launcher was designed as the entry point of the distribution kit, providing access to the Applied Genetics installer and to a separate video presentation. In the original directory structure, it expected the installer at `Kit/AppliedGenetics_setup.exe` and the video interface at `video/index.htm`. The preserved launcher therefore documents how the software was intended to be presented and installed from the CD, even when some of the original installation or video files are not part of the current archive.
+
+Together, the launcher source, interface resources, covers and disc artwork preserve more than the application itself: they reconstruct the appearance and organization of the original physical software package.
 
 
 ## Windows 11 edition
