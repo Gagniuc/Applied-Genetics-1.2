@@ -125,9 +125,9 @@ The **Restriction Enzymes** tab displays the complete enzyme list together with 
 |---|---|
 | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/o3.png) | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/o4.png) |
 
-| Primers |
-|---|
-| ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/o5.png) |
+| Primers | Visualisation |
+|---|---|
+| ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/o5.png) | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/gif/sequence%20highlighting%20(II).gif) |
 
 
 The **Program Text** tab controls the appearance of both the nucleotide editor and the OUTPUT window. Font family, size, foreground colour, background colour and styles such as bold, italic, underline and strikethrough can be changed independently. The **Codons** tab contains the RNA codon assignments used during translation and allows the mappings for each amino acid to be edited. Translation can be displayed using either one-letter notation, such as `M`, `P` and `Q`, or three-letter notation, such as `Met`, `Pro` and `Gln`.
