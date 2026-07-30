@@ -15,7 +15,7 @@
 
 The original program was created in the academic environment of the **University of Bucharest, Institute of Genetics**, during 2008–2009. The source was later recovered and adapted for modern 32-bit VB6 execution under Windows 11, while preserving the original interface, algorithms, project format, terminology, and historical shareware subsystem.
 
-![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/DSC06700.JPG)
+![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/DVD%20(IV).png)
 
 <hr>
 
