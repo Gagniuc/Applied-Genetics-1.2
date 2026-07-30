@@ -22,8 +22,6 @@ The editor is also used as the main annotation surface. Restriction sites, fragm
 
 <hr>
 
-![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/gif/screen%20(I).gif)
-
 Characters outside the accepted nucleotide alphabet can be located and coloured in red. A cleaning command creates a version of the sequence containing only recognised nucleotide symbols. The importer follows the traditional GenBank layout: it looks for the sequence between `ORIGIN` and `//`, then removes line numbers, spaces and other formatting characters. The original code does not contain a dedicated FASTA parser.
 
 The main areas of the program are summarised below.
