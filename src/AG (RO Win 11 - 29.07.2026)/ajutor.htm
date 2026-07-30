@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<title>Applied Genetics — Ajutor &amp; Documentație</title>
+<style>
+  :root{
+    --bg:#0e1116;
+    --panel:#161b22;
+    --panel-alt:#1c2330;
+    --border:#2a323e;
+    --text:#dbe1e8;
+    --muted:#8b96a5;
+    --accent:#4fb0ff;
+    --accent2:#f5c451;
+    --code-bg:#0b0e13;
+    --warn:#ff8a65;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Segoe UI",Tahoma,Verdana,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+  }
+  .layout{display:flex; min-height:100vh;}
+  nav{
+    width:260px;
+    flex-shrink:0;
+    background:var(--panel);
+    border-right:1px solid var(--border);
+    padding:24px 18px;
+    position:sticky;
+    top:0;
+    align-self:flex-start;
+    height:100vh;
+    overflow-y:auto;
+  }
+  nav h2{
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:var(--muted);
+    margin:22px 0 8px;
+  }
+  nav h2:first-child{margin-top:0;}
+  nav a{
+    display:block;
+    color:var(--text);
+    text-decoration:none;
+    font-size:14px;
+    padding:5px 8px;
+    border-radius:6px;
+    margin:1px 0;
+  }
+  nav a:hover{background:var(--panel-alt); color:var(--accent);}
+  main{
+    flex:1;
+    max-width:900px;
+    padding:48px 56px 96px;
+  }
+  header.hero{
+    border-bottom:1px solid var(--border);
+    padding-bottom:28px;
+    margin-bottom:36px;
+  }
+  header.hero .badge{
+    display:inline-block;
+    font-size:12px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent2);
+    background:rgba(245,196,81,.1);
+    border:1px solid rgba(245,196,81,.35);
+    padding:3px 10px;
+    border-radius:20px;
+    margin-bottom:14px;
+  }
+  header.hero h1{
+    font-size:34px;
+    margin:0 0 8px;
+    letter-spacing:-.01em;
+  }
+  header.hero p.tagline{
+    color:var(--muted);
+    font-size:16px;
+    margin:0 0 18px;
+    max-width:640px;
+  }
+  header.hero .meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 22px;
+    font-size:13px;
+    color:var(--muted);
+  }
+  header.hero .meta strong{color:var(--text); font-weight:600;}
+  section{margin-bottom:52px;}
+  section h2{
+    font-size:22px;
+    border-left:4px solid var(--accent);
+    padding-left:12px;
+    margin:0 0 18px;
+  }
+  section h3{
+    font-size:17px;
+    color:var(--accent);
+    margin:26px 0 8px;
+  }
+  section h4{
+    font-size:14.5px;
+    margin:18px 0 6px;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    color:var(--muted);
+  }
+  p{margin:0 0 12px;}
+  ul,ol{margin:0 0 14px; padding-left:22px;}
+  li{margin-bottom:5px;}
+  code, .kbd{
+    font-family:Consolas,"Courier New",monospace;
+    background:var(--code-bg);
+    border:1px solid var(--border);
+    border-radius:4px;
+    padding:1px 6px;
+    font-size:13px;
+    color:var(--accent2);
+  }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:12px 0 20px;
+    font-size:14px;
+  }
+  th,td{
+    text-align:left;
+    padding:8px 10px;
+    border-bottom:1px solid var(--border);
+    vertical-align:top;
+  }
+  th{color:var(--muted); font-weight:600; font-size:12.5px; text-transform:uppercase; letter-spacing:.03em;}
+  .card{
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:18px 20px;
+    margin:14px 0;
+  }
+  .card.tab{border-left:3px solid var(--accent);}
+  .note{
+    background:rgba(79,176,255,.08);
+    border:1px solid rgba(79,176,255,.3);
+    border-left:3px solid var(--accent);
+    border-radius:8px;
+    padding:12px 16px;
+    font-size:14px;
+    margin:14px 0;
+  }
+  .warn{
+    background:rgba(255,138,101,.08);
+    border:1px solid rgba(255,138,101,.3);
+    border-left:3px solid var(--warn);
+    border-radius:8px;
+    padding:12px 16px;
+    font-size:14px;
+    margin:14px 0;
+  }
+  .formula{
+    background:var(--code-bg);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:10px 14px;
+    font-family:Consolas,"Courier New",monospace;
+    font-size:13.5px;
+    color:var(--accent2);
+    margin:8px 0;
+  }
+  .btnlist{display:flex; flex-wrap:wrap; gap:8px; margin:10px 0;}
+  .btnlist span{
+    background:var(--panel-alt);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:4px 11px;
+    font-size:13px;
+  }
+  footer{
+    border-top:1px solid var(--border);
+    margin-top:40px;
+    padding-top:20px;
+    color:var(--muted);
+    font-size:13px;
+  }
+  @media (max-width: 860px){
+    nav{display:none;}
+    main{padding:32px 20px;}
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+
+<nav>
+  <h2>Cuprins</h2>
+  <a href="#overview">Prezentare generală</a>
+  <a href="#trial">Trial &amp; Activare</a>
+  <a href="#toolbar">Bara de instrumente</a>
+  <a href="#editing">Editare manuală &amp; conversii</a>
+  <a href="#tabs">Tab-uri de analiză</a>
+  <a href="#enzime">— Enzime</a>
+  <a href="#gene">— Gene</a>
+  <a href="#is">— S.I. (Secvențe Inverse)</a>
+  <a href="#rs">— S.R. (Secvențe Repetitive)</a>
+  <a href="#gel">Simulare GEL</a>
+  <a href="#codons">Codoni &amp; Aminoacizi</a>
+  <a href="#primers">Design Primeri (Tm)</a>
+  <a href="#options">Opțiuni / Proprietăți</a>
+  <a href="#notes">Note de versiune</a>
+</nav>
+
+<main>
+
+<header class="hero">
+  <span class="badge">Software istoric · v1.2 beta</span>
+  <h1>Applied Genetics — Ajutor &amp; Documentație</h1>
+  <p class="tagline">O aplicație desktop scrisă în VB6 pentru analiza secvențelor de ADN / ARN /
+  proteine: detectarea situsurilor de restricție, translația codonilor, căutarea repetițiilor și
+  palindroamelor, design de primeri și simularea electroforezei pe gel. Păstrată aici cu scop
+  istoric.</p>
+  <div class="meta">
+    <span>v1.2 beta</span>
+    <span>© 2008–2009</span>
+  </div>
+</header>
+
+<section id="overview">
+  <h2>Prezentare generală</h2>
+  <p>Applied Genetics este o aplicație VB6 cu o singură fereastră principală (formularul
+  <code>genetica.frm</code>, proiect <code>AG</code>), construită în jurul unei casete mari de
+  text/RTF care conține o secvență de ADN, ARN sau proteină, și a unui panou lateral cu tab-uri
+  care oferă patru familii de analize: enzime de restricție, unelte pentru gene/frame-shift,
+  căutare de secvențe inverse și căutare de repetiții. Rezultatele sunt trimise într-o fereastră
+  <strong>OUTPUT</strong> sub formă de text formatat și colorat, și pot fi opțional reprezentate
+  ca un gel de agaroză simulat.</p>
+  <p>Programul a fost distribuit ca shareware, cu un contor de utilizare de 30 de rulări, un
+  flux de activare online și o variantă offline prin cheie de pe CD.</p>
+</section>
+
+<section id="trial">
+  <h2>Trial &amp; Activare</h2>
+  <p>La pornire, formularul <strong>Trial</strong> verifică un contor de utilizări înainte de a
+  preda controlul ferestrei principale.</p>
+  <div class="card">
+    <h4>Butoanele ferestrei Trial</h4>
+    <div class="btnlist">
+      <span>Validare</span><span>Continuare</span><span>Internet</span><span>Ieșire</span>
+    </div>
+    <ul>
+      <li><strong>Continuare</strong> — rulează programul în mod trial și decrementează contorul
+      de utilizări rămase ("Programul poate fi utilizat de <em>N</em> ori").</li>
+      <li><strong>Validare</strong> — deschide ecranul de introducere a cheii
+      (<code>Trial_COD.frm</code>), unde o cheie de activare achiziționată (utilizator + cod)
+      poate fi introdusă și verificată.</li>
+      <li><strong>Internet</strong> — link pentru obținerea unei chei de activare online.</li>
+    </ul>
+  </div>
+  <div class="note">
+    Contorul de trial e stocat atât în registry
+    (<code>HKCU\Software\VB and VBA Program Settings\WinSys\system</code>), cât și într-un mic
+    fișier-marcaj numit <code>sys_exp.dll</code>, scris în folderul de sistem al Windows-ului.
+    Cele două trebuie să coincidă, altfel programul refuză să pornească ("Programul a mai fost
+    instalat pe acest PC!"). Pe Windows 64-bit, ține minte că acest program 32-bit este
+    redirecționat transparent din <code>System32</code> spre <code>SysWOW64</code> pentru acest
+    fișier.
+  </div>
+</section>
+
+<section id="toolbar">
+  <h2>Bara de instrumente</h2>
+  <table>
+    <tr><th>Buton</th><th>Rol</th></tr>
+    <tr><td>Importă</td><td>Importă o secvență dintr-un fișier extern (inclusiv fișiere în format GeneBank).</td></tr>
+    <tr><td>Deschide / Salvează</td><td>Deschide sau salvează un proiect Applied Genetics (împachetează textul RTF de intrare, textul din OUTPUT și datele de gel, separate intern prin markeri precum <code>[#PROCESARE#]</code> / <code>[#PIC#]</code> / <code>[#NR_GEL#]</code>).</td></tr>
+    <tr><td>Compilare</td><td>Rulează analiza selectată curent (butonul se redenumește "Procesez…" cât timp lucrează).</td></tr>
+    <tr><td>Start / Stop</td><td>Pornește sau oprește o scanare de durată (căutare brute-force pe tab-urile S.I./S.R., sau o trecere prin enzime/restricție). Același handler ca butoanele Start/Stop specifice fiecărui tab, descrise mai jos.</td></tr>
+    <tr><td>Opțiuni</td><td>Deschide fereastra Opțiuni / Proprietăți — vezi <a href="#options">Opțiuni</a>.</td></tr>
+    <tr><td>Ajutor / OnLine / Despre</td><td>Ajutor local, pagina online a proiectului și fereastra Despre.</td></tr>
+  </table>
+</section>
+
+<section id="editing">
+  <h2>Editare manuală &amp; conversii de secvență</h2>
+  <p>Deasupra casetei principale de secvență, un rând de butoane cu o literă convertește sau
+  anotează selecția curentă sau întreaga secvență:</p>
+  <div class="btnlist">
+    <span>R</span><span>F</span><span>S</span><span>G</span>
+    <span>Antisens</span><span>Revers</span><span>ARN-ADN</span><span>ADN-ARN</span><span>ADN-AA</span>
+  </div>
+  <ul>
+    <li><strong>Antisens</strong> — calculează catena antisens pornind de la o poziție dată.</li>
+    <li><strong>Revers</strong> — calculează catena inversată.</li>
+    <li><strong>ARN-ADN / ADN-ARN</strong> — conversie dus-întors între ARN și ADN.</li>
+    <li><strong>ADN-AA</strong> — translatează o secvență de ADN în aminoacizi, folosind tabelul
+    de codoni curent (vezi <a href="#codons">Codoni &amp; Aminoacizi</a>).</li>
+  </ul>
+  <p>Un panou lateral live ("Mutări în timp real") afișează în timp real numărul de
+  <code>A / T / C / G / U</code>, lungimea selecției, un <code>Tm</code> aproximativ de primer și
+  <code>G+C%</code>, pe măsură ce selectezi text în caseta de secvență.</p>
+</section>
+
+<section id="tabs">
+  <h2>Tab-uri de analiză</h2>
+  <p>Panoul din dreapta are patru tab-uri. Toate patru împart același buton comutator
+  <strong>Start/Stop</strong> (<code>Testeaza_CODUL</code>), oglindit pe un al doilea buton
+  suprapus (<code>Run_Primar</code>).</p>
+
+  <div id="enzime" class="card tab">
+    <h3>Enzime — Enzime de restricție</h3>
+    <p>Detectează situsurile de recunoaștere ale enzimelor de restricție în secvență, atât în
+    direcția normală (5'→3'), cât și în direcția complementară (3'→5'), și poate simula
+    deleții/inserții în jurul punctului de clivare al unei enzime alese (marcat cu
+    <code>*</code> în secvența ei de recunoaștere).</p>
+    <ul>
+      <li><strong>DETECTEAZĂ RESTRICȚIE</strong> — scanează toate situsurile de recunoaștere
+      ale enzimei/enzimelor selectate din baza de date.</li>
+      <li>Deleție / Inserție, fiecare în 5'→3' și 3'→5' — explorează situsuri de restricție
+      posibile după simularea unei deleții sau inserții la o distanță dată în jurul situsurilor
+      existente.</li>
+      <li>Rezultatele sunt trimise în OUTPUT cu totaluri pe direcție și combinate, de exemplu
+      <em>„Total situsuri de restricție existente în direcțiile 5'-3' și 3'-5': [4]”</em>, iar
+      fiecare fragment poate fi reprezentat pe GEL-ul simulat.</li>
+    </ul>
+  </div>
+
+  <div id="gene" class="card tab">
+    <h3>Gene</h3>
+    <ul>
+      <li><strong>Frame Shift</strong> — decalează cadrul de citire folosit pentru analiza
+      codon-cu-codon.</li>
+      <li><strong>Delimitează AUG</strong> — localizează și încadrează codonii START în
+      secvență.</li>
+      <li>Notație codon START / STOP — marcaje configurabile, de exemplu
+      <code>[+POZITIEb+]</code> / <code>[-POZITIEb-]</code>, folosite pentru a marca poziția
+      codonilor de start și stop direct în secvența afișată.</li>
+    </ul>
+  </div>
+
+  <div id="is" class="card tab">
+    <h3>S.I. (Secvențe Inverse)</h3>
+    <p>Generează prin brute-force fiecare combinație posibilă de nucleotide între o lungime de
+    start și una de final configurabile (set de caractere, lungime țintă, combinație de start
+    opțională) și verifică fiecare combinație în secvență pentru
+    <strong>repetiții inverse/palindromice</strong> (<code>VER_PALINDROM_DISTANTA</code>).
+    Potrivirile sunt raportate cu poziția lor și adăugate în OUTPUT prin
+    <code>SECVENTE_INVERSE</code>. Un panou de status live afișează combinația curentă,
+    combinații/secundă și totaluri. O reprezentare grafică opțională ("Arată S.I. în format
+    grafic") oglindește progresul într-o a doua fereastră (<code>Lista_cu_geluri.frm</code>).</p>
+  </div>
+
+  <div id="rs" class="card tab">
+    <h3>S.R. (Secvențe Repetitive)</h3>
+    <p>Folosește același motor brute-force ca S.I., dar verifică fiecare combinație generată
+    pentru <strong>repetiții directe</strong> (<code>VER_REPETITIE_DISTANTA</code> /
+    <code>REPETITII</code>), limitate de câmpurile "Cel puțin" / "Cel mult" pentru numărul de
+    repetiții. Potrivirile sunt evidențiate direct în caseta de secvență și înregistrate în
+    OUTPUT, de exemplu <em>„Repetiții la poziția:[…] - [AAAA * 12] …”</em>.</p>
+  </div>
+
+  <div class="warn">
+    <strong>Oprirea unei scanări în curs:</strong> ambele căutări (S.I. și S.R.) pot dura mult pe
+    secvențe lungi cu motive frecvente. Apasă din nou același buton Start/Stop pentru a opri —
+    click-ul e detectat între iterațiile buclei brute-force și în interiorul rutinelor de
+    scanare/evidențiere, deci poate dura o clipă până se înregistrează, dacă prinde o iterație
+    "ocupată", în loc să se oprească instantaneu.
+  </div>
+</section>
+
+<section id="gel">
+  <h2>Simulare GEL</h2>
+  <p>Un panou dedicat reprezintă fragmentele detectate ca benzi pe un gel de agaroză simulat,
+  alături de o casetă de informații live care arată enzima curentă, indexul fragmentului și
+  distanța de migrare (<em>„Migrare : … b - … mm”</em>). Culorile benzilor/segmentelor sunt
+  configurabile pentru fiecare algoritm (deleție / inserție / normal, fiecare pe ambele
+  direcții) din fereastra Opțiuni.</p>
+  <p><strong>Interacțiune cu segmentele:</strong> click-stânga pe un segment de gel îi schimbă
+  culoarea de fundal; click-dreapta îi schimbă culoarea textului. Aceste segmente reprezintă
+  culorile diferitelor tipuri de secvențe găsite de algoritmii Applied Genetics.</p>
+</section>
+
+<section id="codons">
+  <h2>Codoni &amp; Aminoacizi</h2>
+  <p>Editorul de Codoni îți permite să remapezi ce tripleți de ARN se translatează în ce
+  aminoacid, și să alegi între notația scurtă (<code>M, P, Q</code>) și cea lungă
+  (<code>Met, Pro, Gln</code>) pentru secvența de proteină rezultată.</p>
+  <table>
+    <tr><th>Aminoacid</th><th>Codoni</th></tr>
+    <tr><td>Ala (A)</td><td><code>GCA, GCC, GCG, GCU</code></td></tr>
+    <tr><td>Arg (R)</td><td><code>CGA, CGC, CGG, CGU, AGA, AGG</code></td></tr>
+    <tr><td>Asn (N)</td><td><code>AAC, AAU</code></td></tr>
+    <tr><td>Asp (D)</td><td><code>GAC, GAU</code></td></tr>
+    <tr><td>Cys (C)</td><td><code>UGC, UGU</code></td></tr>
+    <tr><td>Gln (Q)</td><td><code>CAA, CAG</code></td></tr>
+    <tr><td>Glu (E)</td><td><code>GAA, GAG</code></td></tr>
+    <tr><td>Gly (G)</td><td><code>GGA, GGC, GGG, GGU</code></td></tr>
+    <tr><td>His (H)</td><td><code>CAC, CAU</code></td></tr>
+    <tr><td>Ile (I)</td><td><code>AUA, AUC, AUU</code></td></tr>
+    <tr><td>Leu (L)</td><td><code>UUA, UUG, CUA, CUC, CUG, CUU</code></td></tr>
+    <tr><td>Lys (K)</td><td><code>AAA, AAG</code></td></tr>
+    <tr><td>Met (M) / START</td><td><code>AUG</code></td></tr>
+    <tr><td>Phe (F)</td><td><code>UUC, UUU</code></td></tr>
+    <tr><td>Pro (P)</td><td><code>CCA, CCC, CCG, CCU</code></td></tr>
+    <tr><td>Ser (S)</td><td><code>UCA, UCC, UCG, UCU, AGC, AGU</code></td></tr>
+    <tr><td>Thr (T)</td><td><code>ACA, ACC, ACG, ACU</code></td></tr>
+    <tr><td>Trp (W)</td><td><code>UGG</code></td></tr>
+    <tr><td>Tyr (Y)</td><td><code>UAC, UAU</code></td></tr>
+    <tr><td>Val (V)</td><td><code>GUA, GUC, GUG, GUU</code></td></tr>
+    <tr><td>STOP (Z)</td><td><code>UAA, UAG, UGA</code></td></tr>
+  </table>
+  <div class="note">
+    La introducerea unor codoni personalizați: sunt acceptate doar caracterele
+    <code>A/C/G/U</code> pentru codonii de ARN (folosește <code>u</code>, nu <code>t</code>);
+    fiecare codon trebuie să aibă exact 3 nucleotide; iar separatorul <code>,</code> nu poate fi
+    primul sau ultimul caracter din listă.
+  </div>
+</section>
+
+<section id="primers">
+  <h2>Design Primeri — Temperatura de topire (Tm)</h2>
+  <p>Panoul de Primeri calculează temperatura de topire a unei secvențe selectate, folosind una
+  din cele două formule, comutabile dintr-un meniu derulant:</p>
+  <h4>Formula recomandată</h4>
+  <div class="formula">Tm = 81.5 + 16.6 × (log₁₀ [Na⁺]) + 0.41 × (%G+C) − 675 / n</div>
+  <h4>Formula aproximativă</h4>
+  <div class="formula">Tm = 4 × (G + C) + 2 × (A + T)</div>
+  <p>unde <code>n</code> este numărul total de nucleotide selectate, iar <code>[Na⁺]</code> este
+  concentrația molară de Na⁺. Panoul live afișează lungimea primerului curent, <code>Tm</code> și
+  <code>G+C%</code>, pe măsură ce faci o selecție în caseta de secvență.</p>
+</section>
+
+<section id="options">
+  <h2>Opțiuni / Proprietăți</h2>
+  <p>Fereastra Opțiuni (<code>Mai_mult.frm</code>) grupează patru panouri de configurare:</p>
+  <table>
+    <tr><th>Panou</th><th>Conținut</th></tr>
+    <tr><td>Enzime de restricție</td><td>Baza de date de enzime — nume + situs de recunoaștere (cu <code>*</code> marcând punctul de clivare); adăugare / testare (dublu-click) / ștergere înregistrări.</td></tr>
+    <tr><td>Culori Program</td><td>Culorile ferestrelor și culorile segmentelor pe algoritm pentru vederea GEL (deleție, inserție, normal — fiecare 5'→3' și 3'→5').</td></tr>
+    <tr><td>Text Program</td><td>Familia de fonturi, dimensiune, stil (Bold / Italic / Underline / Strikethru) și culoarea de fundal pentru cele două ferestre principale de text.</td></tr>
+    <tr><td>Codoni</td><td>Editorul de mapare aminoacid ↔ codon descris mai sus, plus alegerea notației scurte/lungi.</td></tr>
+  </table>
+</section>
+
+<section id="notes">
+  <h2>Note de versiune — Portarea pe Windows 11</h2>
+  <p>Această versiune a fost actualizată din sursele originale din 2008–2009 pentru a rula curat
+  pe Windows și IDE-uri VB6 moderne. Reparații notabile:</p>
+  <ul>
+    <li><strong>Avertismente de conflict de nume la încărcare</strong> — nepotrivire de
+    majuscule/minuscule între declarația <code>Begin VB.Form</code> a unui formular și
+    <code>Attribute VB_Name</code> (ex. <code>Principal</code> vs <code>principal</code>),
+    reparat pentru <code>genetica.frm</code> și <code>Actiuni.frm</code>.</li>
+    <li><strong>Eroare de runtime 5 în motorul brute-force</strong>
+    (<code>clsBruteforce.BruteForce</code>) — protejat împotriva apelurilor re-entrante
+    declanșate de <code>DoEvents</code>.</li>
+    <li><strong>Eroare de runtime 5 la extragerea situsurilor de restricție</strong>
+    (<code>Functii_ENZIME.Restricteaza_COD</code>) — argumentele de start/lungime ale lui
+    <code>Mid$</code> sunt acum limitate la intervale valide.</li>
+    <li><strong>Butonul Stop nefuncțional pe tab-urile S.I. / S.R.</strong> — buclele interne de
+    scanare/evidențiere din <code>REPETITII</code> și <code>SECVENTE_INVERSE</code> (în
+    <code>OUT.bas</code>) verifică acum cererea de Stop la fiecare pas de scanare, la fel ca
+    tab-ul Enzime.</li>
+    <li><strong>Fals-pozitive ale contorului de trial pe Windows 64-bit</strong> — fișierul
+    marcaj de trial se află în folderul redirecționat WOW64 <code>SysWOW64</code> pentru acest
+    build 32-bit, nu în adevăratul <code>System32</code>; atât aplicația, cât și utilitarul de
+    resetare țin cont de asta.</li>
+    <li><strong>Interfața tradusă în engleză</strong> — toate captions-urile formularelor,
+    tooltip-urile, etichetele setate dinamic și mesajele au fost traduse din română, păstrând
+    lungimile textelor și markerii interni (ex. <code>[#PROCESARE#]</code>) neatinși.</li>
+  </ul>
+</section>
+
+<footer>
+  Applied Genetics — Ajutor &nbsp;·&nbsp; documentație pentru un software istoric
+</footer>
+
+</main>
+</div>
+</body>
+</html>

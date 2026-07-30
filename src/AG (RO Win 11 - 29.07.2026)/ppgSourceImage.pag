@@ -1,0 +1,317 @@
+VERSION 5.00
+Begin VB.PropertyPage ppgSourceImage 
+   Caption         =   "Image Source"
+   ClientHeight    =   3600
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   4800
+   PaletteMode     =   0  'Halftone
+   ScaleHeight     =   3600
+   ScaleWidth      =   4800
+   Begin VB.ComboBox cboIcon 
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   330
+      Left            =   120
+      Style           =   2  'Dropdown List
+      TabIndex        =   3
+      Top             =   3120
+      Visible         =   0   'False
+      Width           =   2955
+   End
+   Begin VB.CommandButton cmdClipBoard 
+      Caption         =   "From Clipboard"
+      Height          =   480
+      Left            =   3090
+      TabIndex        =   2
+      Top             =   1500
+      Width           =   1605
+   End
+   Begin VB.CommandButton Command1 
+      Caption         =   "Clear Image"
+      Height          =   480
+      Left            =   3090
+      TabIndex        =   1
+      Top             =   2100
+      Width           =   1605
+   End
+   Begin VB.CommandButton cmdBrowse 
+      Caption         =   "Browse"
+      Height          =   480
+      Left            =   3090
+      TabIndex        =   0
+      Top             =   915
+      Width           =   1605
+   End
+   Begin VB.Label lblFormat 
+      Height          =   345
+      Left            =   165
+      TabIndex        =   4
+      Top             =   3120
+      Width           =   4605
+   End
+   Begin AG.aicAlphaImage ucAlphaImage1 
+      Height          =   1260
+      Left            =   960
+      Top             =   1050
+      Width           =   1260
+      _ExtentX        =   2223
+      _ExtentY        =   2223
+      Image           =   "ppgSourceImage.pgx":0000
+   End
+   Begin VB.Shape Shape1 
+      Height          =   2880
+      Left            =   150
+      Top             =   210
+      Width           =   2880
+   End
+End
+Attribute VB_Name = "ppgSourceImage"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Type OPENFILENAME
+     lStructSize As Long
+     hwndOwner As Long
+     hInstance As Long
+     lpstrFilter As String
+     lpstrCustomFilter As String
+     nMaxCustFilter As Long
+     nFilterIndex As Long
+     lpstrFile As String
+     nMaxFile As Long
+     lpstrFileTitle As String
+     nMaxFileTitle As Long
+     lpstrInitialDir As String
+     lpstrTitle As String
+     flags As Long
+     nFileOffset As Integer
+     nFileExtension As Integer
+     lpstrDefExt As String
+     lCustData As Long
+     lpfnHook As Long
+     lpTemplateName As String
+
+End Type
+Private Declare Function GetOpenFileName Lib "comdlg32.dll" Alias "GetOpenFileNameA" (pOpenfilename As OPENFILENAME) As Long
+Private Const OFN_DONTADDTORECENT As Long = &H2000000
+Private Const OFN_ENABLESIZING As Long = &H800000
+Private Const OFN_EXPLORER As Long = &H80000
+Private Const OFN_FILEMUSTEXIST As Long = &H1000
+Private Const OFN_LONGNAMES As Long = &H200000
+
+Private oUC As aicAlphaImage
+
+Private Sub cboIcon_Click()
+
+    Dim tAIC As aicAlphaImage
+    Dim srcData() As Byte
+    Dim cx As Long, cy As Long, cBD As Long
+   
+    Set tAIC = ucAlphaImage1
+    tAIC.ppgGetStream srcData
+    Set tAIC = Nothing
+    
+    ResetSample
+    GetIconSize cx, cy, cBD
+    ucAlphaImage1.LoadImage_FromArray srcData(), cx, cy, cBD
+    SizeDisplay
+    PropertyPage.Changed = True
+    
+End Sub
+
+Private Sub cmdBrowse_Click()
+    
+    Dim sFileName As String
+    
+    sFileName = GetFileName
+    If Not sFileName = vbNullString Then
+        ResetSample
+        Refresh
+        If ucAlphaImage1.LoadImage_FromFile(sFileName, ScaleX(ucAlphaImage1.Width, ScaleMode, vbPixels), ScaleY(ucAlphaImage1.Height, ScaleMode, vbPixels)) Then
+            If LoadIconSizes() = False Then SizeDisplay
+        End If
+        PropertyPage.Changed = True
+    End If
+End Sub
+
+Private Sub cmdClipBoard_Click()
+    
+    On Error Resume Next
+    ResetSample
+    If ucAlphaImage1.LoadImage_FromClipboard() = True Then
+        SizeDisplay
+        PropertyPage.Changed = True
+    Else
+        MsgBox "The clipboard contents are not a valid image format", vbInformation + vbOKOnly, "Error"
+    End If
+
+End Sub
+
+Private Sub Command1_Click()
+    ResetSample
+    PropertyPage.Changed = True
+End Sub
+
+Private Sub PropertyPage_ApplyChanges()
+    
+    Dim srcData() As Byte
+    Dim tObj As aicAlphaImage
+    Dim cx As Long, cy As Long, cBD As Long
+    
+    Set tObj = ucAlphaImage1
+    If tObj.ppgGetStream(srcData) = True Then
+        GetIconSize cx, cy, cBD
+        oUC.ppgSetStream srcData, cx, cy, cBD
+    Else
+        oUC.ClearImage
+    End If
+        
+End Sub
+
+Private Sub PropertyPage_SelectionChanged()
+    If SelectedControls.Count = 0 Then
+        Set oUC = Nothing
+        PropertyPage.Changed = False
+    Else
+        Dim srcData() As Byte
+        ResetSample
+        Set oUC = SelectedControls(0)
+        If oUC.ppgGetStream(srcData) = True Then
+            ucAlphaImage1.LoadImage_FromArray srcData, ScaleX(ucAlphaImage1.Width, ScaleMode, vbPixels), ScaleY(ucAlphaImage1.Height, ScaleMode, vbPixels)
+            If LoadIconSizes = False Then SizeDisplay
+        Else
+            ucAlphaImage1.ClearImage
+        End If
+        PropertyPage.Changed = False
+    End If
+End Sub
+
+
+Private Function GetFileName() As String
+
+    Dim ofn As OPENFILENAME
+    Dim rtn As Long
+    
+    With ofn
+        .lStructSize = Len(ofn)
+        .hwndOwner = PropertyPage.hwnd
+        .hInstance = App.hInstance
+        .lpstrFilter = "All Images" & Chr$(0) & "*gif;*.bmp;*.jpg;*.jpeg;*.ico;*.cur;*.wmf;*.emf;*.png"
+        .lpstrFilter = ofn.lpstrFilter & Chr$(0) & "Bitmaps" & Chr$(0) & "*.bmp" & Chr$(0) & "GIFs" & Chr$(0) & "*.gif" & Chr$(0) & "Icons and Cursors" & Chr$(0) & "*.ico;*.cur" & Chr$(0) & "JPGs" & Chr$(0) & "*.jpg;*.jpeg" & Chr$(0) & "Meta Files" & Chr$(0) & "*.wmf;*.emf" & Chr$(0) & "PNGs" & Chr$(0) & "*.png" & Chr$(0)
+        .lpstrFilter = ofn.lpstrFilter & "All Files" & Chr$(0) & "*.*" & Chr$(0)
+        .nMaxFile = 255
+        .lpstrFile = String$(.nMaxFile, 0&)
+        .lpstrFileTitle = String$(.nMaxFile, 0&)
+        .nMaxFileTitle = .nMaxFile
+        .lpstrTitle = "Select Image"
+        .lpstrInitialDir = ""
+        .flags = OFN_LONGNAMES Or OFN_FILEMUSTEXIST Or OFN_EXPLORER Or OFN_ENABLESIZING Or OFN_DONTADDTORECENT
+    End With
+    
+    rtn = GetOpenFileName(ofn)
+    If Not rtn = 0 Then GetFileName = Left$(ofn.lpstrFile & Chr$(0), InStr(ofn.lpstrFile, Chr$(0)) - 1)
+
+End Function
+
+Private Sub SizeDisplay()
+
+    Dim cx As Long, cy As Long
+    
+    ucAlphaImage1.GetImageScales cx, cy, aiScaleDownOnly, ScaleX(Shape1.Width, ScaleMode, vbPixels) - 2, ScaleY(Shape1.Height, ScaleMode, vbPixels) - 2
+    
+    cx = ScaleX(cx, vbPixels, ScaleMode)
+    cy = ScaleY(cy, vbPixels, ScaleMode)
+    ucAlphaImage1.Move (Shape1.Width - cx) \ 2 + Shape1.Left, _
+                (Shape1.Height - cy) \ 2 + Shape1.Top, cx, cy
+    ucAlphaImage1.Visible = True
+
+End Sub
+
+Private Sub ResetSample()
+    ucAlphaImage1.Visible = False
+    ucAlphaImage1.ClearImage
+End Sub
+
+Private Sub GetIconSize(cx As Long, cy As Long, bitDepth As Long)
+
+
+    If cboIcon.Visible = True Then
+        cx = Val(Left$(cboIcon.Text, 3))
+        cy = Val(Mid$(cboIcon.Text, 5, 3))
+        bitDepth = Val(Mid$(cboIcon.Text, InStr(cboIcon.Text, "{") + 1, 3))
+    End If
+    
+End Sub
+
+Private Function LoadIconSizes() As Boolean
+
+    Dim tAIC As aicAlphaImage
+    Dim icoSizes() As Long
+    Dim X As Long, i As Long
+    Dim tDib As c32bppDIB, sItem As String, sOrder As Long
+    
+    Set tAIC = ucAlphaImage1
+    Set tDib = tAIC.ppgDIBclass
+    If tDib.SourceIconSizes(icoSizes) = 0 Then
+        sItem = tDib.Width & " x " & tDib.Height & " - "
+        Select Case tDib.ImageType
+            Case imgBitmap: sItem = sItem & "Bitmap or JPG file"
+            Case imgBmpARGB, imgBmpPARGB: sItem = sItem & "Alpha Bitmap"
+            Case imgEMF, imgWMF: sItem = sItem & "Windows Meta File"
+            Case imgGIF
+                If tDib.Alpha = True Then
+                    sItem = sItem & "Transparent GIF"
+                Else
+                    sItem = sItem & "GIF file"
+                End If
+            Case imgPNG: sItem = sItem & "PNG file"
+            Case Else
+        End Select
+        lblFormat.Caption = sItem
+        cboIcon.Visible = False
+        cboIcon.Clear
+        lblFormat.Visible = True
+    Else
+        lblFormat.Visible = False
+        cboIcon.Clear
+        For X = 0 To UBound(icoSizes, 2)
+            sItem = Format(icoSizes(0, X), "000") & "x" & Format(icoSizes(1, X), "000")
+            sItem = sItem & " {" & icoSizes(2, X) & " bit, "
+            Select Case icoSizes(3, X)
+                Case TRUE_COLOR
+                    sItem = sItem & "True Color}"
+                Case HIGH_COLOR
+                    sItem = sItem & "High Color}"
+                Case TRUE_COLOR_ALPHA
+                    sItem = sItem & "True Color Alpha}"
+                Case Else
+                    sItem = sItem & icoSizes(3, X) & " colors}"
+            End Select
+            sOrder = icoSizes(0, X) * icoSizes(1, X) + icoSizes(2, X)
+            For i = 0 To cboIcon.ListCount - 1
+                If sOrder < cboIcon.ItemData(i) Then Exit For
+            Next
+            cboIcon.AddItem sItem, i
+            cboIcon.ItemData(i) = sOrder
+        Next
+        cboIcon.Visible = True
+    End If
+    Set tDib = Nothing
+    Set tAIC = Nothing
+    If cboIcon.ListCount > 0 Then
+        cboIcon.ListIndex = cboIcon.ListCount - 1
+        cboIcon.Enabled = (cboIcon.ListCount > 1)
+    End If
+    LoadIconSizes = (cboIcon.ListCount > 0)
+End Function
