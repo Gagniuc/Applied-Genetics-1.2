@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ro" translate="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google" content="notranslate">
+<title>Applied Genetics — asocierea fișierelor .pro / .agx</title>
+<style>
+  :root{
+    --font-mono:ui-monospace,'Cascadia Code','JetBrains Mono','Fira Code','SFMono-Regular',Consolas,Menlo,monospace;
+    --font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,Roboto,Helvetica,Arial,sans-serif;
+    --bg:#0d120e;
+    --panel:#131a14;
+    --panel-2:#182019;
+    --line:#25322a;
+    --text:#dbe4dc;
+    --muted:#7f8f83;
+    --green:#7ddc6f;
+    --amber:#e0a458;
+    --blue:#7ab8e0;
+    --red:#e07a6b;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--font-sans);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:64px 24px 100px;}
+
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--green);
+    display:flex;align-items:center;gap:10px;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);}
+  h1{
+    font-family:var(--font-mono);
+    font-weight:700;
+    font-size:clamp(24px,3.6vw,34px);
+    line-height:1.28;
+    margin:0 0 14px;
+    letter-spacing:-.01em;
+  }
+  .subtitle{color:var(--muted);font-size:16px;max-width:64ch;margin:0 0 40px;}
+  .meta{
+    font-family:var(--font-mono);
+    font-size:12px;color:var(--muted);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:12px 0;margin-bottom:48px;
+    display:flex;flex-wrap:wrap;gap:24px;
+  }
+  .meta span b{color:var(--text);font-weight:500;}
+
+  h2{
+    font-family:var(--font-mono);
+    font-size:14px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--green);
+    margin:64px 0 20px;
+    display:flex;align-items:baseline;gap:10px;
+  }
+  h2 .num{color:var(--muted);font-weight:400;}
+  h3.sub{
+    font-family:var(--font-mono);
+    font-size:13px;color:var(--blue);
+    margin:28px 0 10px;
+    text-transform:none;
+    letter-spacing:0;
+  }
+  p{margin:0 0 16px;}
+  .lead{font-size:16px;color:var(--text);}
+
+  .inline-code{
+    background:var(--panel-2);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:1px 6px;
+    font-size:.92em;
+    font-family:var(--font-mono);
+    color:var(--green);
+  }
+  .inline-code.amber{color:var(--amber);}
+  .inline-code.blue{color:var(--blue);}
+
+  .panel{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:22px 24px;
+    margin:20px 0;
+  }
+  .code-block{
+    background:#0a0e0b;
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:16px 18px;
+    font-family:var(--font-mono);
+    font-size:12.8px;
+    color:#b9c9bd;
+    overflow-x:auto;
+    margin:16px 0;
+    white-space:pre;
+  }
+  .code-block .comment{color:var(--muted);font-style:italic;}
+  .code-block .str{color:var(--amber);}
+  .code-block .kw{color:var(--green);}
+  .code-block .fn{color:var(--blue);}
+
+  .steps{margin-left:10px;}
+  .step{
+    position:relative;
+    padding:0 0 28px 30px;
+    border-left:1px solid var(--line);
+    margin-left:9px;
+  }
+  .step:last-child{border-left:1px solid transparent;padding-bottom:0;}
+  .step::before{
+    content:attr(data-n);
+    position:absolute;left:-13px;top:0;
+    width:24px;height:24px;
+    background:var(--panel-2);
+    border:1px solid var(--green);
+    color:var(--green);
+    border-radius:50%;
+    font-family:var(--font-mono);
+    font-size:11px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .step h4{
+    margin:0 0 6px;
+    font-size:15.5px;
+    font-weight:600;
+    color:var(--text);
+  }
+  .step p{color:var(--muted);font-size:14.5px;margin-bottom:8px;}
+  .step .file-tag{
+    display:inline-block;
+    font-family:var(--font-mono);
+    font-size:11px;
+    color:var(--blue);
+    background:rgba(122,184,224,.1);
+    border:1px solid rgba(122,184,224,.3);
+    border-radius:4px;
+    padding:2px 7px;
+    margin-bottom:8px;
+  }
+
+  .flow{
+    display:flex;flex-wrap:wrap;gap:10px;align-items:center;
+    margin:20px 0 8px;
+    font-family:var(--font-mono);
+    font-size:12.5px;
+  }
+  .box{
+    background:var(--panel-2);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:9px 13px;
+    color:var(--text);
+  }
+  .box.hi{border-color:var(--green);color:var(--green);}
+  .box.warn{border-color:var(--amber);color:var(--amber);}
+  .arrow{color:var(--muted);}
+
+  .callout{
+    border:1px solid rgba(224,164,88,.35);
+    background:rgba(224,164,88,.08);
+    border-radius:8px;
+    padding:16px 18px;
+    margin:24px 0;
+  }
+  .callout.info{border-color:rgba(122,184,224,.35);background:rgba(122,184,224,.08);}
+  .callout .head{
+    font-family:var(--font-mono);
+    font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--amber);margin-bottom:6px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .callout.info .head{color:var(--blue);}
+  .callout p{color:var(--text);font-size:14.5px;margin-bottom:0;}
+
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13.5px;}
+  th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);}
+  th{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:500;}
+  td.mono{color:var(--green);font-family:var(--font-mono);}
+  td.mono.blue{color:var(--blue);}
+
+  .regtree{
+    font-family:var(--font-mono);
+    font-size:12.8px;
+    background:#0a0e0b;
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:16px 20px;
+    margin:16px 0;
+    color:#b9c9bd;
+  }
+  .regtree .k1{color:var(--amber);}
+  .regtree .k2{color:var(--blue);}
+  .regtree .v{color:var(--green);}
+  .regtree div{white-space:pre;}
+
+  footer{
+    margin-top:70px;padding-top:24px;border-top:1px solid var(--line);
+    font-family:var(--font-mono);font-size:12px;color:var(--muted);
+  }
+
+  @media (max-width:600px){
+    .wrap{padding:40px 18px 70px;}
+    .meta{gap:14px;}
+    .flow{font-size:11.5px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="eyebrow">reverse&#8209;engineering notes</div>
+  <h1>Cum se asociază fișierele .pro / .agx cu AG.exe și MS.exe</h1>
+  <p class="subtitle">Mecanismul prin care Applied Genetics își înregistrează propriile extensii de fișier în Windows, astfel încât un dublu-click pe un fișier intern al aplicației să fie recunoscut și explicat userului în loc să genereze o eroare.</p>
+
+  <div class="meta">
+    <span>sursă: <b>genetica.frm · Asociere_AG_fisier.bas · Mesaj.frm</b></span>
+    <span>limbaj: <b>Visual Basic 6</b></span>
+    <span>mecanism: <b>Windows Registry (HKEY_CLASSES_ROOT)</b></span>
+  </div>
+
+  <h2><span class="num">01</span> Ce face, pe scurt</h2>
+  <p class="lead">Applied Genetics folosește două extensii proprii de fișier — <span class="inline-code">.pro</span> (proiectul propriu-zis) și <span class="inline-code">.agx</span> (fișiere interne de resurse, imagini salvate din aplicație). La prima pornire, aplicația scrie direct în Registry cheile care spun Windows-ului "dacă userul deschide un fișier cu extensia asta, pornește <i>acest</i> executabil". Fișierele <span class="inline-code">.pro</span> se deschid cu <span class="inline-code">AG.exe</span> (aplicația principală), iar <span class="inline-code">.agx</span> cu un executabil separat, minimalist — <span class="inline-code">MS.exe</span> — compilat din proiectul "Mesaj", care nu face altceva decât să afișeze un mesaj de identificare.</p>
+
+  <div class="flow">
+    <div class="box warn">user dă dublu&#8209;click pe un .agx</div>
+    <div class="arrow">→</div>
+    <div class="box">Windows caută în Registry cine deschide .agx</div>
+    <div class="arrow">→</div>
+    <div class="box hi">pornește MS.exe "cale\fișier.agx"</div>
+    <div class="arrow">→</div>
+    <div class="box">MS.exe citește calea și arată userului cărui proiect îi aparține</div>
+  </div>
+
+  <h2><span class="num">02</span> Momentul înregistrării — <span style="text-transform:none;font-weight:400;color:var(--muted);font-size:13px;">genetica.frm</span></h2>
+  <p>Asocierea nu se face la fiecare pornire, ci o singură dată — controlată printr-un fișier martor <span class="inline-code">aso.dat</span> aflat lângă executabil.</p>
+
+  <div class="steps">
+    <div class="step" data-n="1">
+      <span class="file-tag">genetica.frm</span>
+      <h4>Verificare dacă asocierea a fost deja făcută</h4>
+      <p>La pornirea aplicației principale, se citește conținutul binar al fișierului <span class="inline-code">App.Path &amp; "\aso.dat"</span>, dacă există.</p>
+    </div>
+    <div class="step" data-n="2">
+      <h4>Dacă marcajul lipsește, se face asocierea</h4>
+      <p>Dacă textul citit nu e exact <span class="inline-code amber">"[#AG#]"</span>, aplicația consideră că nu a mai rulat pe acest PC (sau că cineva a șters fișierul) și apelează funcțiile de asociere.</p>
+      <div class="code-block">If BitArray &lt;&gt; <span class="str">"[#AG#]"</span> Then
+    <span class="fn">Call AssociateMe</span>(<span class="str">".pro"</span>, <span class="str">"AG Text"</span>, App.Path + <span class="str">"\"</span>, <span class="str">"AG"</span>)
+    <span class="fn">Call AssociateMe2</span>(<span class="str">".agx"</span>, <span class="str">"MS Text"</span>, App.Path + <span class="str">"\"</span>, <span class="str">"MS"</span>)
+    <span class="comment">' scrie "[#AG#]" în aso.dat, ca să nu se mai repete</span>
+End If</div>
+    </div>
+    <div class="step" data-n="3">
+      <h4>Marcare ca „deja făcut"</h4>
+      <p>Se rescrie <span class="inline-code">aso.dat</span> cu conținutul <span class="inline-code amber">"[#AG#]"</span>, astfel încât la următoarea pornire pasul 2 să fie sărit.</p>
+    </div>
+  </div>
+
+  <h2><span class="num">03</span> Motorul asocierii — <span style="text-transform:none;font-weight:400;color:var(--muted);font-size:13px;">Asociere_AG_fisier.bas</span></h2>
+  <p>Modulul definește două funcții aproape identice, <span class="inline-code">AssociateMe</span> și <span class="inline-code">AssociateMe2</span>, care scriu direct în <span class="inline-code">HKEY_CLASSES_ROOT</span> folosind API-uri Windows (<span class="inline-code">RegCreateKey</span>, <span class="inline-code">RegSetValueEx</span> din <span class="inline-code">advapi32.dll</span>), fără să treacă prin panoul de control — deci userul nu vede niciun dialog, e transparent.</p>
+
+  <h3 class="sub">Ce chei scrie efectiv în Registry (pentru .agx → MS.exe)</h3>
+  <div class="regtree"><div><span class="k1">HKEY_CLASSES_ROOT\.agx</span>                          = <span class="v">MS.Exe.agx</span>
+<span class="k1">HKEY_CLASSES_ROOT\.agx\ShellNew</span>                 = <span class="v">(gol)</span>
+<span class="k1">HKEY_CLASSES_ROOT\MS.Exe.agx</span>                    = <span class="v">"MS Text"</span>  <span class="comment">' descrierea tipului de fișier</span>
+<span class="k1">HKEY_CLASSES_ROOT\MS.Exe.agx\Shell\Open\command</span> = <span class="v">MS.exe %1</span>  <span class="comment">' comanda de deschidere</span>
+<span class="k1">HKEY_CLASSES_ROOT\MS.Exe.agx\DefaultIcon</span>        = <span class="v">...\MS.exe,0</span>  <span class="comment">' iconița afișată în Explorer</span></div></div>
+
+  <p>La final se apelează <span class="inline-code">SHChangeNotify(SHCNE_ASSOCCHANGED, ...)</span>, care spune Windows Explorer să reîncarce imediat asocierile — fără el, ar trebui repornit Explorer sau PC-ul ca schimbarea să se vadă.</p>
+
+  <div class="callout info">
+    <div class="head">ⓘ diferența dintre AssociateMe și AssociateMe2</div>
+    <p>Sunt aproape identice — singura diferență e iconița implicită: <span class="inline-code blue">AssociateMe</span> (folosită pentru <span class="inline-code">.pro</span>) pune iconița propriului exe (<span class="inline-code">App.Path &amp; App.ExeName</span>, adică AG.exe), în timp ce <span class="inline-code blue">AssociateMe2</span> (folosită pentru <span class="inline-code">.agx</span>) are hardcodat <span class="inline-code">"...\MS.exe,0"</span> — deci fișierele .agx apar în Explorer cu iconița lui MS.exe, nu a lui AG.exe.</p>
+  </div>
+
+  <h2><span class="num">04</span> Ce se întâmplă la deschiderea unui .agx — <span style="text-transform:none;font-weight:400;color:var(--muted);font-size:13px;">Mesaj.frm → MS.exe</span></h2>
+  <p>Proiectul <span class="inline-code">Mesaj.vbp</span> se compilează cu numele <span class="inline-code">ExeName32="MS.exe"</span> — acesta e executabilul înregistrat mai sus. E o aplicație minimalistă, fără altă treabă decât să identifice fișierul deschis.</p>
+
+  <div class="steps">
+    <div class="step" data-n="1">
+      <h4>Windows pornește MS.exe cu calea fișierului ca argument</h4>
+      <p>Conform cheii <span class="inline-code">Shell\Open\command</span>, Windows rulează <span class="inline-code">MS.exe "C:\...\proiect_ag.agx"</span>. Calea completă ajunge în variabila <span class="inline-code">Command</span> din VB6.</p>
+    </div>
+    <div class="step" data-n="2">
+      <h4>Verificare argument gol sau placeholder</h4>
+      <p>Dacă <span class="inline-code">Command</span> e gol → aplicația se închide instant (<span class="inline-code">End</span>). Dacă e exact <span class="inline-code amber">"%1"</span> (placeholder-ul nedeepanat din Registry, ex. la testare manuală din editorul VB6) → nu face nimic special.</p>
+    </div>
+    <div class="step" data-n="3">
+      <h4>Extragerea numelui proiectului din cale</h4>
+      <p>Din calea completă, taie tot ce e după ultimul <span class="inline-code">\</span> ca să obțină directorul (<span class="inline-code">Cale_proiect</span>), apoi din numele fișierului taie extensia (după ultimul <span class="inline-code">.</span>) ca să obțină numele proiectului (<span class="inline-code">proiectul</span>).</p>
+      <div class="code-block">Cale_proiect = Mid(Command, 1, InStrRev(Command, <span class="str">"\"</span>))
+tmp          = Mid(Command, InStrRev(Command, <span class="str">"\"</span>) + 1, Len(Command))
+proiectul    = Mid(tmp, 1, InStrRev(tmp, <span class="str">"."</span>) - 1)</div>
+    </div>
+    <div class="step" data-n="4">
+      <h4>Afișarea mesajului</h4>
+      <p>Formularul își schimbă eticheta în <span class="inline-code amber">"Fișier resursă al proiectului: [proiectul]"</span> și așteaptă ca userul să apese <span class="inline-code">Ok</span>, care doar închide fereastra (<span class="inline-code">End</span>).</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="head">⚠ de ce are sens</div>
+    <p>Fără această asociere, un dublu-click pe un <span class="inline-code">.agx</span> ar da eroare "Windows nu știe cu ce să deschidă acest fișier" sau, în lipsa unui handler dedicat, ar putea fi confundat cu o imagine coruptă. În loc de asta, userul primește imediat un răspuns clar despre ce e fișierul și cărui proiect îi aparține — fără să fie nevoit să deschidă aplicația principală.</p>
+  </div>
+
+  <h2><span class="num">05</span> Pe scurt</h2>
+  <table>
+    <tr><th>Extensie</th><th>Handler</th><th>Funcție de asociere</th><th>Rol</th></tr>
+    <tr><td class="mono">.pro</td><td class="mono blue">AG.exe</td><td class="mono">AssociateMe</td><td>proiectul principal Applied Genetics</td></tr>
+    <tr><td class="mono">.agx</td><td class="mono blue">MS.exe</td><td class="mono">AssociateMe2</td><td>fișiere interne de resurse (imagini salvate din aplicație)</td></tr>
+  </table>
+  <table>
+    <tr><th>Fișier</th><th>Rol</th></tr>
+    <tr><td class="mono">genetica.frm</td><td>decide, o singură dată, când să declanșeze asocierea (verifică <span class="inline-code">aso.dat</span>)</td></tr>
+    <tr><td class="mono">Asociere_AG_fisier.bas</td><td>scrie direct cheile de Registry pentru asociere</td></tr>
+    <tr><td class="mono">Mesaj.frm (→ MS.exe)</td><td>executabilul separat care rulează la deschiderea unui .agx și identifică proiectul</td></tr>
+  </table>
+
+  <footer>Notițe tehnice generate din sursele VB6 originale ale proiectului</footer>
+</div>
+</body>
+</html>
