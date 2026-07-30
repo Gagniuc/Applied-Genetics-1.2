@@ -214,6 +214,11 @@ The original release used a 30-run trial system. Each time the program started, 
 
 The two values were compared at startup. If they matched, the counter was incremented and the program continued. If they differed, the application assumed that one of the values had been manually modified and treated the trial information as invalid. Keeping the same value in two different locations made simple counter resets more difficult, although the mechanism was still relatively easy to inspect and bypass by modern standards.
 
+
+| Ro | En |
+|---|---|
+| ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/trial%20RO.png) | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/trial%20EN.png) |
+
 Registration was based on a username and a corresponding activation code. The activation window validated the entered pair and, when accepted, stored the registration information in an encrypted file named `ag_exp.001`. On later launches, the program checked this file before displaying the trial counter. A valid registration allowed the application to start without consuming one of the remaining trial runs.
 
 The trial interface, activation-code generator, encryption routines, and related validation classes are preserved in the source code because they formed part of the original software architecture. They are useful for studying historical shareware protection techniques, but they should not be considered secure licensing methods for current software. The implementation relies on writable Registry entries, local files, reversible custom encryption, and Windows paths that may require elevated permissions on modern systems.
@@ -221,6 +226,11 @@ The trial interface, activation-code generator, encryption routines, and related
 ## Original CD distribution kit
 
 The repository also preserves the presentation layer of the original CD edition. The `CD Interfata` directory contains the Visual Basic 6 project used for the disc launcher, while the `img` directory includes the surviving CD covers, disc artwork and other visual material associated with the physical release.
+
+
+<hr>
+
+![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/setup.png)
 
 <hr>
 
