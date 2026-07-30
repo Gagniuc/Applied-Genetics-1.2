@@ -19,7 +19,7 @@ The application is primarily a **DNA/RNA analysis tool with derived protein outp
 |---|---|
 | Product | Applied Genetics |
 | Version | 1.2 beta |
-| Original period | 2008–2009 |
+| Original period | 2007–2008 |
 | Restoration | July 2026 |
 | Language | Microsoft Visual Basic 6.0 |
 | Platform | 32-bit Windows desktop |
