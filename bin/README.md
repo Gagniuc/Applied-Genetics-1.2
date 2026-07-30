@@ -2,7 +2,21 @@
 
 Applied Genetics is a Windows desktop application for working directly with DNA and RNA sequences. It was written in Visual Basic 6 and brings together a sequence editor, restriction-enzyme analysis, codon translation, repeat detection, primer calculations, graphical annotation and a simple electrophoresis-gel simulation.
 
+<hr>
+
+![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/DVD%20(IV).png)
+
+<hr>
+
 The repository preserves several stages of the project: the older Romanian Windows XP source, Romanian and English editions adapted for Windows 11, the original CD launcher, the file-association utility and the historical trial-key project. The Windows 11 editions keep the original interface, data files and project format while correcting a number of problems that appeared when the old VB6 code was compiled and used on a modern system.
+
+<hr>
+
+![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/DVD%20(II).png)
+
+<hr>
+
+![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/DSC06704.JPG)
 
 Applied Genetics is mainly an interactive teaching and exploratory tool. It works with one nucleotide sequence at a time and shows the result directly in the editor, in a text output window or in one of the graphical views. Its algorithms are based largely on exact string matching. It is not intended to replace present-day sequence-alignment packages, genomic databases or clinical bioinformatics software.
 
@@ -11,6 +25,12 @@ Applied Genetics is mainly an interactive teaching and exploratory tool. It work
 A sequence can be typed or pasted into the main editor, loaded from an Applied Genetics project or imported from a GenBank-style text file. While the sequence is being inspected, the program reports the current selection, its length, the number of `A`, `T`, `C`, `G` and `U` symbols, the nucleotide percentages and the `G+C` content.
 
 The editor is also used as the main annotation surface. Restriction sites, fragments, codons, repeats and other detected regions are marked by changing the foreground or background colour of the corresponding text. A horizontal map below the editor shows where the marked regions occur in relation to the complete sequence.
+
+![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/screen%20(I).jpg)
+
+<hr>
+
+![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/gif/screen%20(I).gif)
 
 Characters outside the accepted nucleotide alphabet can be located and coloured in red. A cleaning command creates a version of the sequence containing only recognised nucleotide symbols. The importer follows the traditional GenBank layout: it looks for the sequence between `ORIGIN` and `//`, then removes line numbers, spaces and other formatting characters. The original code does not contain a dedicated FASTA parser.
 
@@ -219,6 +239,8 @@ Together, the launcher source, interface resources, covers and disc artwork pres
 
 The modern source trees are not a rewrite. They retain the VB6 architecture and original project format, but repair several faults that became visible during compilation and use on Windows 11.
 
+![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/load.png)
+
 The form-name casing was made consistent with the internal VB6 attributes, parts of the main layout were widened, and protection was added against the re-entrant calls that could occur when `DoEvents` was used inside the brute-force engine. Long searches now respond better to the Stop command, including during result colouring. A repeat-search accumulator that was not reset correctly was fixed, and boundary checks were added around several `Mid$` operations near the beginning and end of a sequence.
 
 The Windows 11 source is available in Romanian and English. Internal control names, data markers and project conventions were left unchanged wherever possible so that the translated edition would remain compatible with the original files.
@@ -251,3 +273,36 @@ Applied Genetics can also register `.pro` files with `AG.exe` and `.agx` files w
 VB6 binary companion files such as `.frx`, `.ctx`, `.pgx` and `.agx` should not be edited as ordinary text. The internal markers in `.pro` files must also remain unchanged because the loader searches for their exact spelling.
 
 The repository is intended to preserve the original application in a form that can still be studied, compiled and used. Any future port to another language or framework should be kept separate from the historical VB6 edition so that the original program and its file formats remain available.
+
+## Video demonstration (I)
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=nmyNR0VMKF0">
+    <img src="https://img.youtube.com/vi/nmyNR0VMKF0/maxresdefault.jpg"
+         alt="Applied Genetics 1.2 — Video Demonstration"
+         width="800">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=nmyNR0VMKF0">
+    ▶ Watch the Applied Genetics 1.2 demonstration on YouTube
+  </a>
+</p>
+
+
+## Video demonstration (II)
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=CqIFUx_PaPA">
+    <img src="https://img.youtube.com/vi/CqIFUx_PaPA/maxresdefault.jpg"
+         alt="Applied Genetics 1.2 — Video Demonstration"
+         width="800">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=CqIFUx_PaPA">
+    ▶ Watch the Applied Genetics 1.2 demonstration on YouTube
+  </a>
+</p>
