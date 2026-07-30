@@ -109,6 +109,29 @@ Applied Genetics produces a compact visual summary of most analyses. The whole-s
 
 The gel view converts calculated fragment lengths into horizontal bands. A time parameter can be changed to alter the apparent migration distance, and information about the enzyme, fragment number and fragment length is displayed while the result is inspected. The view is useful for explaining the relation between cleavage positions and fragment sizes, but it is a simplified graphical model rather than a calibrated simulation of a laboratory gel.
 
+
+## Options and customization
+
+The **Options** window brings together the main configuration settings of Applied Genetics. Its five tabs control the restriction-enzyme database, program colours, text appearance, codon assignments and primer calculations.
+
+The **Restriction Enzymes** tab displays the complete enzyme list together with each recognition site. The supplied database contains 126 enzymes, and entries can be tested, added or removed directly from this window. The **Program Colors** tab defines the colours used throughout the graphical analyses, including START and STOP codons, genes, repetitive sequences, inverse sequences, normal restriction sites, insertion- and deletion-related sites, the vertical sequence marker, the graphical overview and the simulated gel.
+
+
+| Restriction Enzymes | Program Colors |
+|---|---|
+| ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/o1.png) | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/o2.png) |
+
+| Program Text | Primers |
+|---|---|
+| ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/o3.png) | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/o4.png) |
+
+
+
+The **Program Text** tab controls the appearance of both the nucleotide editor and the OUTPUT window. Font family, size, foreground colour, background colour and styles such as bold, italic, underline and strikethrough can be changed independently. The **Codons** tab contains the RNA codon assignments used during translation and allows the mappings for each amino acid to be edited. Translation can be displayed using either one-letter notation, such as `M`, `P` and `Q`, or three-letter notation, such as `Met`, `Pro` and `Gln`.
+
+The **Primers** tab contains the two melting-temperature formulas used by the program. Both the simple approximation and the sodium-adjusted formula can be selected, and their numerical constants can be modified directly from the interface.
+
+
 ## Applied Genetics project files
 
 A saved project is made from three related files:
