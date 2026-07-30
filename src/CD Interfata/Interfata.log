@@ -1,0 +1,40 @@
+Line 16: Class Project1.KDCButton of control ins was not a loaded control class.
+Line 41: Class Project1.KDCButton of control ies was not a loaded control class.
+Line 66: Class Project1.KDCButton of control tut was not a loaded control class.
+Line 91: Class Project1.KDCButton of control cop was not a loaded control class.
+Line 22: The property name _ExtentX in ins is invalid.
+Line 23: The property name _ExtentY in ins is invalid.
+Line 25: The property name Style in ins is invalid.
+Line 26: The property name Caption in ins is invalid.
+Line 36: The property name BackColorTop in ins is invalid.
+Line 37: The property name BackColorBottom in ins is invalid.
+Line 38: The property name BorderColorTop in ins is invalid.
+Line 39: The property name BorderColorBottom in ins is invalid.
+Line 16: Property Appearance in ins could not be set.
+Line 47: The property name _ExtentX in ies is invalid.
+Line 48: The property name _ExtentY in ies is invalid.
+Line 50: The property name Style in ies is invalid.
+Line 51: The property name Caption in ies is invalid.
+Line 61: The property name BackColorTop in ies is invalid.
+Line 62: The property name BackColorBottom in ies is invalid.
+Line 63: The property name BorderColorTop in ies is invalid.
+Line 64: The property name BorderColorBottom in ies is invalid.
+Line 41: Property Appearance in ies could not be set.
+Line 72: The property name _ExtentX in tut is invalid.
+Line 73: The property name _ExtentY in tut is invalid.
+Line 75: The property name Style in tut is invalid.
+Line 76: The property name Caption in tut is invalid.
+Line 86: The property name BackColorTop in tut is invalid.
+Line 87: The property name BackColorBottom in tut is invalid.
+Line 88: The property name BorderColorTop in tut is invalid.
+Line 89: The property name BorderColorBottom in tut is invalid.
+Line 66: Property Appearance in tut could not be set.
+Line 97: The property name _ExtentX in cop is invalid.
+Line 98: The property name _ExtentY in cop is invalid.
+Line 100: The property name Style in cop is invalid.
+Line 101: The property name Caption in cop is invalid.
+Line 111: The property name BackColorTop in cop is invalid.
+Line 112: The property name BackColorBottom in cop is invalid.
+Line 113: The property name BorderColorTop in cop is invalid.
+Line 114: The property name BorderColorBottom in cop is invalid.
+Line 91: Property Appearance in cop could not be set.
