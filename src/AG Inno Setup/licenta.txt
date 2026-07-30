@@ -1,0 +1,43 @@
+Applied Genetics 2008 
+
+Licenta si garantie.
+
+DACA NU SUNTETI DE ACORD CU ACESTI TERMENI SI CU ACESTE CONDITII NU INSTALATI ACEST SOFT. SELECTÂND "Accept conditiile", "Continuare", SAU INSTALÂND SAU UTILIZÂND SOFTUL ÎN ORICE FEL INDICATI COMPLETA ÎNTELEGERE SI ACCEPTARE A TERMENILOR CONTRACTULUI DE LICENTA.
+
+Acesti Termeni acopera solutiile si serviciile Applied Genetics, incluzând documentatia asociata si orice fel de actualizare a aplicatiei furnizata dumneavoastra în baza licentei achizitionate sau orice întelegere de servicii asociata, definita în documentatie, si orice copie a acestor obiecte.
+
+Acest Contract de Licenta reprezinta o conventie legala între dumneavoastra (ca persoana fizica sau persoana juridica utilizator final) si autor pentru utilizarea produsului soft identificat mai sus, apartinând Institutului de Genetica din Bucuresti si autorului, care include softul propriu-zis, serviciile si poate include medii de informatie asociate, materiale tiparite si documentatie "on line" sau electronica (referite mai departe ca "Applied Genetics"). Toate acestea sunt protejate de legislatia internationala privind drepturile de autor si proprietatea intelectuala, precum si de tratatele internationale. Prin instalarea, copierea sau utilizarea, în orice alt mod, a produsului Applied Genetics, acceptati termenii acestui contract.
+
+Daca nu sunteti de acord cu termenii acestui contract, nu instalati si nu utilizati produsul Applied Genetics.
+Applied Genetics este protejat de tratatele si legile internationale privind drepturile de autor, precum si de celelalte legi si tratate privind proprietatea intelectuala. Applied Genetics este oferit sub licenta si nu vândut.
+
+ACORDAREA LICENTEI. 
+Applied Genetics va ofera, dumneavoastra si numai dumneavoastra, urmatoarea licenta ne-exclusiva, limitata, netransferabila pentru utilizarea produsului Applied Genetics.
+
+APLICATIA SOFTWARE. 
+Puteti instala si utiliza Applied Genetics pe oricâte calculatoare este necesar în limita numarului total de licente de utilizator detinute. Puteti face o singura copie aditionala, ca rezerva.
+
+LICENTA UTILIZATORULUI. 
+Fiecare utilizator principal poate instala acest soft pe un singur calculator si poate face doar o singura copie aditionala, ca rezerva, pe un dispozitiv diferit. Numarul de utilizatori principali permis este numarul de utilizatori ai licentei.
+
+DURATA LICENTEI. Licenta acordata aici va începe la data la care veti instala Applied Genetics si va continua nelimitat pentru varianta V1.2.
+
+COPYRIGHT. Toate drepturile, titlurile si beneficiile ce tin de Applied Genetics, toate materialele tiparite care însotesc produsul si orice copie a produsului Applied Genetics sunt proprietatea autorului si a Institutului de Genetica din Bucuresti. Applied Genetics este protejat de legile si tratatele internationale privind drepturile de autor si proprietatea intelectuala. Prin urmare, Applied Genetics trebuie tratat ca orice alt material supus drepturilor de autor. Nu aveti dreptul sa copiati materialele tiparite ce însotesc Applied Genetics. Aveti obligatia de a prezenta si include toate notele privind drepturile de autor în forma lor originala în toate copiile create, indiferent de mediul de transmisie sau de forma în care Applied Genetics exista. Sunt interzise sub-licentierea, închirierea, vinderea, cedarea sau împartirea licentei Applied Genetics. De asemenea, sunt interzise piratarea, recompilarea, dezasamblarea, crearea de produse derivate, modificarea, traducerea sau orice alta încercare de a descoperi codul sursa al produsului Applied Genetics.
+
+CU EXCEPTIA CELOR PRECIZATE ÎN MOD EXPLICIT ÎN ACEASTA ÎNTELEGERE, AUTORUL ACESTUI PROGRAM SOFTWARE SI INSTITUTUL DE GENETICA DIN BUCURESTI ÎSI DECLINA RESPONSABILITATEA PENTRU ORICE ALTE GARANTII, EXPLICITE SAU IMPLICITE, CE PRIVESC PRODUSELE, ÎMBUNATATIRILE, ÎNTRETINEREA SAU SUPORTUL LEGAT DE ACESTEA, SAU ORICE ALTE MATERIALE (TANGIBILE SAU INTANGIBILE) SAU SERVICII FURNIZATE. APPLIED GENETICS DECLINA ÎN MOD EXPLICIT ORICE GARANTII SI CONDITII IMPLICITE, INCLUZÂND, FARA LIMITARE, GARANTIILE IMPLICITE ALE VANDABILITATII, UTILIZARII ÎNTR-UN ANUMIT SCOP, TITLULUI, NON-INTERFERENTEI, ACURATETEI DATELOR, A CONTINUTULUI INFORMATIONAL, INTEGRARII SISTEMULUI SI NEÎNCALCARII DREPTURILOR UNOR TERTE PARTI.
+
+DECLINAREA RESPONSABILITATII ÎN CAZ DE DAUNE. Orice persoana care utilizeaza, testeaza sau evalueaza Applied Genetics îsi asuma riscul legat de calitatea si performanta acestuia. Autorul si Institutul de Genetica din Bucuresti nu vor fi responsabili, în niciun caz, pentru daune de orice natura, incluzând, fara limitare, daune directe sau indirecte, rezultate din utilizarea, performanta sau livrarea Applied Genetics, chiar daca autorul a fost informat de existenta sau posibilitatea aparitiei acestora. 
+
+ANUNT IMPORTANT PENTRU UTILIZATORI.  ACEST SOFT POATE CONTINE ERORI SI NU ESTE PROIECTAT SAU DESTINAT UTILIZARII ÎNTR-UN MEDIU CU GRAD MARE DE RISC SI CARE NECESITA O PERFORMANTA SAU FUNCTIONARE ÎN CONDITII DE SECURITATE ABSOLUTA. ACEST PRODUS NU ESTE DESTINAT UTILIZARII ÎN OPERATIUNI DIN DOMENIUL AVIATIEI, SECTORUL NUCLEAR SAU SISTEME DE COMUNICATII, SECTORUL ARMAMENTULUI, SISTEME DIRECTE SAU INDIRECTE DE MENTINERE A VIETII, CONTROLUL TRAFICULUI AERIAN SAU ORICE ALTA APLICATIE SAU INSTALATIE ÎN CARE APARITIA UNEI EROARI AR PUTEA CAUZA MOARTEA SAU RANIREA GRAVA A UNOR PERSOANE SAU DAUNE ALE PROPRIETATII.
+
+GENERAL. Aceasta întelegere se afla sub incidenta legilor din România si a regulamentelor si tratatelor internationale privind drepturile de autor si proprietatea intelectuala. Jurisdictia exclusiva si locatia judecarii oricarei dispute ce ar putea reiesi din acesti termeni de licenta va fi cea a tribunalelor din Romania.
+
+Preturile, costurile si sumele de bani pentru utilizarea Applied Genetics pot fi modificate fara sa fiti anuntat în prealabil.
+
+Licenta se va încheia imediat, fara a fi anuntat, în cazul în care încalcati oricare dintre termenii sau conditiile ei. 
+
+Autorul si Institutul de Genetica din Bucuresti poate revizui acesti termeni în orice moment, iar termenii revizuiti se vor aplica în mod automat versiunilor soft corespunzatoare, distribuite cu termenii revizuiti. Daca oricare parte a acestor termeni este gasita nula si neavenita, acest lucru nu va afecta validitatea restului termenilor, ce vor ramâne în vigoare.
+
+Contact: 0723926096, paulgagniuc@yahoo.com
+
+utilizator[:]MOVK6XVCM2J6Z1S704
