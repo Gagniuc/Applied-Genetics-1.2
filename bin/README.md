@@ -2,21 +2,13 @@
 
 Applied Genetics is a Windows desktop application for working directly with DNA and RNA sequences. It was written in Visual Basic 6 and brings together a sequence editor, restriction-enzyme analysis, codon translation, repeat detection, primer calculations, graphical annotation and a simple electrophoresis-gel simulation.
 
-<hr>
-
-![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/DVD%20(IV).png)
-
-<hr>
-
 The repository preserves several stages of the project: the older Romanian Windows XP source, Romanian and English editions adapted for Windows 11, the original CD launcher, the file-association utility and the historical trial-key project. The Windows 11 editions keep the original interface, data files and project format while correcting a number of problems that appeared when the old VB6 code was compiled and used on a modern system.
 
 <hr>
 
-![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/DVD%20(II).png)
+![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/DSC06704.JPG)
 
 <hr>
-
-![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/DSC06704.JPG)
 
 Applied Genetics is mainly an interactive teaching and exploratory tool. It works with one nucleotide sequence at a time and shows the result directly in the editor, in a text output window or in one of the graphical views. Its algorithms are based largely on exact string matching. It is not intended to replace present-day sequence-alignment packages, genomic databases or clinical bioinformatics software.
 
@@ -230,7 +222,20 @@ The trial interface, activation-code generator, encryption routines, and related
 
 The repository also preserves the presentation layer of the original CD edition. The `CD Interfata` directory contains the Visual Basic 6 project used for the disc launcher, while the `img` directory includes the surviving CD covers, disc artwork and other visual material associated with the physical release.
 
+<hr>
+
+![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/DVD%20(IV).png)
+
+<hr>
+
 The launcher was designed as the entry point of the distribution kit, providing access to the Applied Genetics installer and to a separate video presentation. In the original directory structure, it expected the installer at `Kit/AppliedGenetics_setup.exe` and the video interface at `video/index.htm`. The preserved launcher therefore documents how the software was intended to be presented and installed from the CD, even when some of the original installation or video files are not part of the current archive.
+
+
+<hr>
+
+![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/DVD%20(II).png)
+
+<hr>
 
 Together, the launcher source, interface resources, covers and disc artwork preserve more than the application itself: they reconstruct the appearance and organization of the original physical software package.
 
