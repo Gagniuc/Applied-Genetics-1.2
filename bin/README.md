@@ -61,19 +61,27 @@ EnzymeName[#]RECOG*NITION
 
 One or several enzymes can be selected for the same analysis. The program searches for exact recognition sequences in both displayed directions, records the sites, calculates the corresponding cut positions and combines the results into an ordered fragment map. Each fragment can then be extracted and described by length and nucleotide composition.
 
+| Enzymes | Gene |
+|---|---|
+| ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/p1.png) | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/p2.png) |
+
 The same result is presented in several forms. Recognition sites and fragment boundaries are coloured in the sequence editor, their positions are drawn on the whole-sequence map, and the calculated fragments are represented as bands in the gel view. The program can display a local gel for one enzyme or a general gel combining several enzymes.
 
 The restriction panel also contains an experimental search for sites that could be formed after a deletion or insertion. The recognition sequence is divided at each possible internal position, and the two remaining parts are searched at a chosen separation distance. A single distance or an interval between 1 and 100 nucleotides can be tested. When a possible site is found, the left part, affected interval and right part are coloured separately. This is an exact textual search for potential sites rather than a general mutation-analysis engine.
 
 ## Inverse sequences, palindromes and direct repeats
 
-The **I.S. / S.I.** module searches for a motif followed later by the same motif in reversed order. The program generates every possible motif for a selected alphabet and length interval, then scans the sequence for matching pairs. The normal alphabet is `A`, `C`, `G` and `T`, although it can be changed in the interface.
+The **I.S. / S.I.** module (Inverse Sequences / Secvențe Inverse) searches for a motif followed later by the same motif in reversed order. The program generates every possible motif for a selected alphabet and length interval, then scans the sequence for matching pairs. The normal alphabet is `A`, `C`, `G` and `T`, although it can be changed in the interface.
 
 For every match, Applied Genetics records the position and length of the first motif, the sequence between the two motifs and the position of the reversed motif. The result is shown both as text and as a small graphical strip. When the distance between the two motifs is zero, the structure is identified as a palindrome in the generated report.
 
 The search is exhaustive. Its running time rises quickly as the maximum motif length increases because the number of possible combinations grows exponentially. The interface shows the current combination, total number of combinations and processing speed, and the Windows 11 edition contains additional cancellation checks so that a long search can be stopped more reliably.
 
-The **R.S. / S.R.** module uses a related generator to find exact tandem repeats. The user chooses the motif-length interval and the allowed number of consecutive repetitions. Matching regions are coloured in the editor and described in OUTPUT. The original algorithm does not allow mismatches, gaps or approximate repeat scoring.
+| Inverse Sequences | Repetitive Sequences |
+|---|---|
+| ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/p3.png) | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/p4.png) |
+
+The **R.S. / S.R.** module (Repetitive Sequences / Secvențe Repetitive) uses a related generator to find exact tandem repeats. The user chooses the motif-length interval and the allowed number of consecutive repetitions. Matching regions are coloured in the editor and described in OUTPUT. The original algorithm does not allow mismatches, gaps or approximate repeat scoring.
 
 ## Gene and inverse-sequence details
 
