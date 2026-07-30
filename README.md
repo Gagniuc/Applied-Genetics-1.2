@@ -51,6 +51,13 @@ The main window is built around a large RichTextBox used for nucleotide input an
 
 ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/screen%20(I).jpg)
 
+<hr>
+
+![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/gif/screen%20(I).gif)
+
+
+
+
 The workspace provides:
 
 - editable DNA or RNA sequence text;
