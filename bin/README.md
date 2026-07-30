@@ -65,9 +65,7 @@ The **R.S. / S.R.** module uses a related generator to find exact tandem repeats
 
 ## Primer and probe estimates
 
-For a selected sequence, the program calculates the `G+C` percentage and estimates the melting temperature. Short selections are labelled as primers and longer selections as probes.
-
-The first formula is the familiar simple approximation:
+For a selected sequence, the program calculates the `G+C` percentage and estimates the melting temperature. Short selections are labelled as primers and longer selections as probes. The first formula is the familiar simple approximation:
 
 ```text
 Tm = 4 × (G + C) + 2 × (A + T)
