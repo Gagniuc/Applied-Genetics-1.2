@@ -21,6 +21,10 @@ The original program was created in the academic environment of the **University
 
 ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/DVD%20(II).png)
 
+<hr>
+
+![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/DSC06704.JPG)
+
 The application is primarily a **DNA/RNA analysis tool with derived protein output**. It does not perform sequence alignment, database similarity searches, phylogenetic inference, or modern high-throughput analysis.
 
 ## Project facts
