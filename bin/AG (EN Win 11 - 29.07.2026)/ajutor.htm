@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Applied Genetics — Help &amp; Documentation</title>
+<style>
+  :root{
+    --bg:#0e1116;
+    --panel:#161b22;
+    --panel-alt:#1c2330;
+    --border:#2a323e;
+    --text:#dbe1e8;
+    --muted:#8b96a5;
+    --accent:#4fb0ff;
+    --accent2:#f5c451;
+    --code-bg:#0b0e13;
+    --warn:#ff8a65;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Segoe UI",Tahoma,Verdana,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+  }
+  .layout{display:flex; min-height:100vh;}
+  nav{
+    width:260px;
+    flex-shrink:0;
+    background:var(--panel);
+    border-right:1px solid var(--border);
+    padding:24px 18px;
+    position:sticky;
+    top:0;
+    align-self:flex-start;
+    height:100vh;
+    overflow-y:auto;
+  }
+  nav h2{
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:var(--muted);
+    margin:22px 0 8px;
+  }
+  nav h2:first-child{margin-top:0;}
+  nav a{
+    display:block;
+    color:var(--text);
+    text-decoration:none;
+    font-size:14px;
+    padding:5px 8px;
+    border-radius:6px;
+    margin:1px 0;
+  }
+  nav a:hover{background:var(--panel-alt); color:var(--accent);}
+  main{
+    flex:1;
+    max-width:900px;
+    padding:48px 56px 96px;
+  }
+  header.hero{
+    border-bottom:1px solid var(--border);
+    padding-bottom:28px;
+    margin-bottom:36px;
+  }
+  header.hero .badge{
+    display:inline-block;
+    font-size:12px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent2);
+    background:rgba(245,196,81,.1);
+    border:1px solid rgba(245,196,81,.35);
+    padding:3px 10px;
+    border-radius:20px;
+    margin-bottom:14px;
+  }
+  header.hero h1{
+    font-size:34px;
+    margin:0 0 8px;
+    letter-spacing:-.01em;
+  }
+  header.hero p.tagline{
+    color:var(--muted);
+    font-size:16px;
+    margin:0 0 18px;
+    max-width:640px;
+  }
+  header.hero .meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 22px;
+    font-size:13px;
+    color:var(--muted);
+  }
+  header.hero .meta strong{color:var(--text); font-weight:600;}
+  section{margin-bottom:52px;}
+  section h2{
+    font-size:22px;
+    border-left:4px solid var(--accent);
+    padding-left:12px;
+    margin:0 0 18px;
+  }
+  section h3{
+    font-size:17px;
+    color:var(--accent);
+    margin:26px 0 8px;
+  }
+  section h4{
+    font-size:14.5px;
+    color:var(--text);
+    margin:18px 0 6px;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    color:var(--muted);
+  }
+  p{margin:0 0 12px;}
+  ul,ol{margin:0 0 14px; padding-left:22px;}
+  li{margin-bottom:5px;}
+  code, .kbd{
+    font-family:Consolas,"Courier New",monospace;
+    background:var(--code-bg);
+    border:1px solid var(--border);
+    border-radius:4px;
+    padding:1px 6px;
+    font-size:13px;
+    color:var(--accent2);
+  }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:12px 0 20px;
+    font-size:14px;
+  }
+  th,td{
+    text-align:left;
+    padding:8px 10px;
+    border-bottom:1px solid var(--border);
+    vertical-align:top;
+  }
+  th{color:var(--muted); font-weight:600; font-size:12.5px; text-transform:uppercase; letter-spacing:.03em;}
+  .card{
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:18px 20px;
+    margin:14px 0;
+  }
+  .card.tab{border-left:3px solid var(--accent);}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .note{
+    background:rgba(79,176,255,.08);
+    border:1px solid rgba(79,176,255,.3);
+    border-left:3px solid var(--accent);
+    border-radius:8px;
+    padding:12px 16px;
+    font-size:14px;
+    margin:14px 0;
+  }
+  .warn{
+    background:rgba(255,138,101,.08);
+    border:1px solid rgba(255,138,101,.3);
+    border-left:3px solid var(--warn);
+    border-radius:8px;
+    padding:12px 16px;
+    font-size:14px;
+    margin:14px 0;
+  }
+  .formula{
+    background:var(--code-bg);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:10px 14px;
+    font-family:Consolas,"Courier New",monospace;
+    font-size:13.5px;
+    color:var(--accent2);
+    margin:8px 0;
+  }
+  .btnlist{display:flex; flex-wrap:wrap; gap:8px; margin:10px 0;}
+  .btnlist span{
+    background:var(--panel-alt);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:4px 11px;
+    font-size:13px;
+  }
+  footer{
+    border-top:1px solid var(--border);
+    margin-top:40px;
+    padding-top:20px;
+    color:var(--muted);
+    font-size:13px;
+  }
+  @media (max-width: 860px){
+    nav{display:none;}
+    main{padding:32px 20px;}
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+
+<nav>
+  <h2>Contents</h2>
+  <a href="#overview">Overview</a>
+  <a href="#trial">Trial &amp; Activation</a>
+  <a href="#toolbar">Main Toolbar</a>
+  <a href="#editing">Manual Editing &amp; Conversions</a>
+  <a href="#tabs">Analysis Tabs</a>
+  <a href="#enzime">— Enzime (Enzymes)</a>
+  <a href="#gene">— Gene (Genes)</a>
+  <a href="#is">— I.S. (Inverse Sequences)</a>
+  <a href="#rs">— R.S. (Repetitive Sequences)</a>
+  <a href="#gel">GEL Simulation</a>
+  <a href="#codons">Codons &amp; Amino Acids</a>
+  <a href="#primers">Primer Design (Tm)</a>
+  <a href="#options">Options / Properties</a>
+  <a href="#notes">Version Notes</a>
+</nav>
+
+<main>
+
+<header class="hero">
+  <span class="badge">Historical Software · v1.2 beta</span>
+  <h1>Applied Genetics — Help &amp; Documentation</h1>
+  <p class="tagline">A VB6 desktop toolkit for DNA / RNA / protein sequence analysis: restriction site
+  detection, codon translation, repeat &amp; palindrome finding, primer design, and gel electrophoresis
+  simulation. Preserved here for historical purposes.</p>
+  <div class="meta">
+    <span>v1.2 beta</span>
+    <span>© 2008–2009</span>
+  </div>
+</header>
+
+<section id="overview">
+  <h2>Overview</h2>
+  <p>Applied Genetics is a single-window VB6 application (form <code>genetica.frm</code>, project
+  name <code>AG</code>) built around a large text/RTF input box holding a DNA, RNA, or protein
+  sequence, and a tabbed side panel offering four families of analysis: restriction enzymes,
+  gene/frame-shift tools, inverse-sequence search, and repeat search. Results are streamed into
+  an <strong>OUTPUT</strong> window as formatted, colour-highlighted text, and can optionally be
+  represented as a simulated agarose gel.</p>
+  <p>The program was distributed as shareware with a 30-use trial counter, an online activation
+  flow, and an offline CD-key fallback.</p>
+</section>
+
+<section id="trial">
+  <h2>Trial &amp; Activation</h2>
+  <p>On startup, the <strong>Trial</strong> form checks a usage counter before handing off to the
+  main window.</p>
+  <div class="card">
+    <h4>Trial window buttons</h4>
+    <div class="btnlist">
+      <span>Validation</span><span>Continue</span><span>Internet</span><span>Exit</span>
+    </div>
+    <ul>
+      <li><strong>Continue</strong> — runs the program in trial mode and decrements the remaining-use
+      counter ("The program can be used <em>N</em> more times").</li>
+      <li><strong>Validation</strong> — opens the key-entry screen (<code>Trial_COD.frm</code>) where a
+      purchased activation key (username + code) can be entered and verified.</li>
+      <li><strong>Internet</strong> — link to obtain an activation key online.</li>
+    </ul>
+  </div>
+  <div class="note">
+    The trial counter is stored both in the registry
+    (<code>HKCU\Software\VB and VBA Program Settings\WinSys\system</code>) and in a small marker
+    file named <code>sys_exp.dll</code> written to the OS system folder. Both must agree, or the
+    program refuses to run ("The program has already been installed on this PC!"). On 64-bit
+    Windows, remember that this 32-bit app is transparently redirected from
+    <code>System32</code> to <code>SysWOW64</code> for that file.
+  </div>
+</section>
+
+<section id="toolbar">
+  <h2>Main Toolbar</h2>
+  <table>
+    <tr><th>Button</th><th>Purpose</th></tr>
+    <tr><td>Import</td><td>Import a sequence from an external file (including GeneBank-formatted files).</td></tr>
+    <tr><td>Open / Save</td><td>Open or save an Applied Genetics project file (packs the RTF input, the OUTPUT text, and gel data together, separated internally by markers such as <code>[#PROCESARE#]</code> / <code>[#PIC#]</code> / <code>[#NR_GEL#]</code>).</td></tr>
+    <tr><td>Compile</td><td>Runs the currently selected analysis (button relabels itself "Processing…" while busy).</td></tr>
+    <tr><td>Start / Stop</td><td>Starts or aborts a long-running scan (brute-force search on the I.S./R.S. tabs, or a restriction/enzyme pass). Same handler as the tab-specific Start/Stop buttons described below.</td></tr>
+    <tr><td>Options</td><td>Opens the Options / Properties window — see <a href="#options">Options</a>.</td></tr>
+    <tr><td>Help / OnLine / Despre (About)</td><td>Local help, the project's online page, and the About box.</td></tr>
+  </table>
+</section>
+
+<section id="editing">
+  <h2>Manual Editing &amp; Sequence Conversions</h2>
+  <p>Above the main sequence box, a row of single-letter buttons converts or annotates the
+  current selection or full sequence:</p>
+  <div class="btnlist">
+    <span>R</span><span>F</span><span>S</span><span>G</span>
+    <span>Antisens</span><span>Revers</span><span>ARN-ADN</span><span>ADN-ARN</span><span>ADN-AA</span>
+  </div>
+  <ul>
+    <li><strong>Antisens</strong> — computes the antisense strand starting from a given position.</li>
+    <li><strong>Revers</strong> — computes the reversed strand.</li>
+    <li><strong>ARN-ADN / ADN-ARN</strong> — RNA→DNA and DNA→RNA back-and-forth conversion.</li>
+    <li><strong>ADN-AA</strong> — translates a DNA sequence to amino acids using the current codon
+    table (see <a href="#codons">Codons &amp; Amino Acids</a>).</li>
+  </ul>
+  <p>A live side panel ("Real time changes") shows running counts of <code>A / T / C / G / U</code>,
+  the selection length, an approximate primer <code>Tm</code>, and <code>G+C%</code> as you select
+  text in the sequence box.</p>
+</section>
+
+<section id="tabs">
+  <h2>Analysis Tabs</h2>
+  <p>The right-hand panel has four tabs. All four share the same <strong>Start/Stop</strong> toggle
+  button (<code>Testeaza_CODUL</code>) and mirror it on a second overlapping button
+  (<code>Run_Primar</code>).</p>
+
+  <div id="enzime" class="card tab">
+    <h3>Enzime — Restriction Enzymes</h3>
+    <p>Detects restriction-enzyme recognition sites in the sequence, in both the normal
+    (5'→3') and complementary (3'→5') directions, and can simulate deletion/insertion around
+    a chosen enzyme's cleavage point (marked with <code>*</code> in its recognition sequence).</p>
+    <ul>
+      <li><strong>DETECT RESTRICTION</strong> — scans for all recognition sites of the selected
+      enzyme(s) from the enzyme database.</li>
+      <li>Deletion / Insertion, each in 5'→3' and 3'→5' — explores possible restriction sites
+      after simulating a deletion or insertion of a given distance around existing sites.</li>
+      <li>Results are streamed to OUTPUT with per-direction and combined totals, e.g.
+      <em>"Total restriction sites existing in the 5'-3' and 3'-5' directions: [4]"</em>, and each
+      fragment can be represented on the simulated GEL.</li>
+    </ul>
+  </div>
+
+  <div id="gene" class="card tab">
+    <h3>Gene</h3>
+    <ul>
+      <li><strong>Frame Shift</strong> — offsets the reading frame used for codon-by-codon
+      analysis.</li>
+      <li><strong>Delimit AUG</strong> — locates and brackets START codons in the sequence.</li>
+      <li>START / STOP codon notation — customizable bracket markers, e.g.
+      <code>[+POSITIONb+]</code> / <code>[-POSITIONb-]</code>, used to tag the location of start
+      and stop codons directly inside the displayed sequence.</li>
+    </ul>
+  </div>
+
+  <div id="is" class="card tab">
+    <h3>S.I. → I.S. (Inverse Sequences)</h3>
+    <p>Brute-forces every possible nucleotide combination between a configurable start and end
+    length (character set, target length, optional starting combination) and checks each one
+    against the sequence for <strong>inverse/palindromic repeats</strong>
+    (<code>VER_PALINDROM_DISTANTA</code>). Matches are reported with their position and appended
+    to OUTPUT via <code>SECVENTE_INVERSE</code>. A live status panel shows current combination,
+    combinations/second, and totals. An optional graphical view
+    ("Show I.S. in graphic format") mirrors progress on a second window
+    (<code>Lista_cu_geluri.frm</code>).</p>
+  </div>
+
+  <div id="rs" class="card tab">
+    <h3>S.R. → R.S. (Repetitive Sequences)</h3>
+    <p>Same brute-force engine as I.S., but checks each generated combination for
+    <strong>direct repeats</strong> (<code>VER_REPETITIE_DISTANTA</code> /
+    <code>REPETITII</code>), constrained by "At least" / "At most" repeat-count fields. Matches
+    are highlighted directly in the sequence box and logged to OUTPUT, e.g.
+    <em>"Repeats in position:[…] - [AAAA * 12] …"</em>.</p>
+  </div>
+
+  <div class="warn">
+    <strong>Stopping a running scan:</strong> both I.S. and R.S. searches can take a long time on
+    long sequences with common motifs. Press the same Start/Stop button again to abort — the
+    click is detected between iterations of the brute-force loop and inside the
+    highlight-scanning routines, so it may take a moment to register on a very "busy" iteration
+    rather than stopping instantly.
+  </div>
+</section>
+
+<section id="gel">
+  <h2>GEL Simulation</h2>
+  <p>A dedicated panel renders detected fragments as bands on a simulated agarose gel, alongside
+  a live info box showing the current enzyme, fragment index, and migration distance
+  (<em>"Migration : … b - … mm"</em>). Band/segment colours are configurable per algorithm
+  (deletion / insertion / normal, each in both directions) from the Options window.</p>
+  <p><strong>Segment interaction:</strong> left-click a gel segment to change its background
+  colour; right-click to change its text colour. These segments represent the colours of the
+  different sequence types found by the various algorithms.</p>
+</section>
+
+<section id="codons">
+  <h2>Codons &amp; Amino Acids</h2>
+  <p>The Codons editor lets you remap which RNA triplets translate to which amino acid, and
+  choose between short (<code>M, P, Q</code>) and long (<code>Met, Pro, Gln</code>) notation for
+  the resulting protein sequence.</p>
+  <table>
+    <tr><th>Amino acid</th><th>Codons</th></tr>
+    <tr><td>Ala (A)</td><td><code>GCA, GCC, GCG, GCU</code></td></tr>
+    <tr><td>Arg (R)</td><td><code>CGA, CGC, CGG, CGU, AGA, AGG</code></td></tr>
+    <tr><td>Asn (N)</td><td><code>AAC, AAU</code></td></tr>
+    <tr><td>Asp (D)</td><td><code>GAC, GAU</code></td></tr>
+    <tr><td>Cys (C)</td><td><code>UGC, UGU</code></td></tr>
+    <tr><td>Gln (Q)</td><td><code>CAA, CAG</code></td></tr>
+    <tr><td>Glu (E)</td><td><code>GAA, GAG</code></td></tr>
+    <tr><td>Gly (G)</td><td><code>GGA, GGC, GGG, GGU</code></td></tr>
+    <tr><td>His (H)</td><td><code>CAC, CAU</code></td></tr>
+    <tr><td>Ile (I)</td><td><code>AUA, AUC, AUU</code></td></tr>
+    <tr><td>Leu (L)</td><td><code>UUA, UUG, CUA, CUC, CUG, CUU</code></td></tr>
+    <tr><td>Lys (K)</td><td><code>AAA, AAG</code></td></tr>
+    <tr><td>Met (M) / START</td><td><code>AUG</code></td></tr>
+    <tr><td>Phe (F)</td><td><code>UUC, UUU</code></td></tr>
+    <tr><td>Pro (P)</td><td><code>CCA, CCC, CCG, CCU</code></td></tr>
+    <tr><td>Ser (S)</td><td><code>UCA, UCC, UCG, UCU, AGC, AGU</code></td></tr>
+    <tr><td>Thr (T)</td><td><code>ACA, ACC, ACG, ACU</code></td></tr>
+    <tr><td>Trp (W)</td><td><code>UGG</code></td></tr>
+    <tr><td>Tyr (Y)</td><td><code>UAC, UAU</code></td></tr>
+    <tr><td>Val (V)</td><td><code>GUA, GUC, GUG, GUU</code></td></tr>
+    <tr><td>STOP (Z)</td><td><code>UAA, UAG, UGA</code></td></tr>
+  </table>
+  <div class="note">
+    When entering custom codons: only <code>A/C/G/U</code> are accepted for RNA-side codons (use
+    <code>u</code>, not <code>t</code>); each codon must be exactly 3 nucleotides; and the
+    <code>,</code> separator cannot lead or trail the list.
+  </div>
+</section>
+
+<section id="primers">
+  <h2>Primer Design — Melting Temperature (Tm)</h2>
+  <p>The Primer panel calculates the melting temperature of a selected sequence using either of
+  two formulas, switchable from a dropdown:</p>
+  <h4>Recommended formula</h4>
+  <div class="formula">Tm = 81.5 + 16.6 × (log₁₀ [Na⁺]) + 0.41 × (%G+C) − 675 / n</div>
+  <h4>Approximate formula</h4>
+  <div class="formula">Tm = 4 × (G + C) + 2 × (A + T)</div>
+  <p>where <code>n</code> is the total number of selected nucleotides and <code>[Na⁺]</code> is
+  the molar Na⁺ concentration. The live panel shows the current primer length, <code>Tm</code>,
+  and <code>G+C%</code> as you make a selection in the sequence box.</p>
+</section>
+
+<section id="options">
+  <h2>Options / Properties</h2>
+  <p>The Options window (<code>Mai_mult.frm</code>) groups four configuration panels:</p>
+  <table>
+    <tr><th>Panel</th><th>Contents</th></tr>
+    <tr><td>Restriction Enzymes</td><td>Enzyme database — name + recognition site (with <code>*</code> marking the cleavage point); add / test (double-click) / delete entries.</td></tr>
+    <tr><td>Program Colors</td><td>Window colours and per-algorithm segment colours for the GEL view (deletion, insertion, normal — each 5'→3' and 3'→5').</td></tr>
+    <tr><td>Program Text</td><td>Font family, size, style (Bold / Italic / Underline / Strikethru), and background colour for the two main text windows.</td></tr>
+    <tr><td>Codons</td><td>The amino-acid ↔ codon mapping editor described above, plus short/long notation choice.</td></tr>
+  </table>
+</section>
+
+<section id="notes">
+  <h2>Version Notes — Windows 11 Port</h2>
+  <p>This build has been updated from the original 2008–2009 sources to run cleanly under modern
+  Windows and VB6 IDEs. Notable fixes:</p>
+  <ul>
+    <li><strong>Name-conflict warnings on load</strong> — mismatched casing between a form's
+    <code>Begin VB.Form</code> declaration and its <code>Attribute VB_Name</code> (e.g.
+    <code>Principal</code> vs <code>principal</code>) resolved for <code>genetica.frm</code> and
+    <code>Actiuni.frm</code>.</li>
+    <li><strong>Run-time error 5 in the brute-force engine</strong>
+    (<code>clsBruteforce.BruteForce</code>) — guarded against re-entrant calls triggered by
+    <code>DoEvents</code>.</li>
+    <li><strong>Run-time error 5 in restriction-site extraction</strong>
+    (<code>Functii_ENZIME.Restricteaza_COD</code>) — <code>Mid$</code> start/length arguments are
+    now clamped to valid ranges.</li>
+    <li><strong>Stop button unresponsive on I.S. / R.S. tabs</strong> — the internal highlight
+    scanning loops in <code>REPETITII</code> and <code>SECVENTE_INVERSE</code> (in
+    <code>OUT.bas</code>) now check for a Stop request on every scan step, matching the existing
+    convention used by the Enzime tab.</li>
+    <li><strong>Trial counter false positives on 64-bit Windows</strong> — the trial marker file
+    lives in the WOW64-redirected <code>SysWOW64</code> folder for this 32-bit build, not the
+    real <code>System32</code>; both the app and the companion reset tool account for this.</li>
+    <li><strong>UI translated to English</strong> — all form captions, tooltips, dynamically-set
+    labels, and message boxes were translated from the original Romanian, preserving line
+    lengths and internal markers (e.g. <code>[#PROCESARE#]</code>) untouched.</li>
+  </ul>
+</section>
+
+<footer>
+  Applied Genetics Help &nbsp;·&nbsp; historical software documentation
+</footer>
+
+</main>
+</div>
+</body>
+</html>
