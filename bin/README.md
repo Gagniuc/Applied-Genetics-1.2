@@ -190,6 +190,17 @@ C:\Windows\SysWOW64\regsvr32.exe
 
 The auxiliary projects are separate from the main application. `Mesaj.vbp` builds the `.agx` helper, `Include.vbp` builds the CD interface, and `cheie.vbp` builds the historical key utility.
 
+## Trial strategy
+
+The original release used a 30-run trial system. Each time the program started, it read a usage counter from two separate locations: the current user’s VB settings area in the Windows Registry and a small local file named `sys_exp.dll`. Despite its extension, this file was not a real Windows library; it was only used as a secondary storage location for the trial counter.
+
+The two values were compared at startup. If they matched, the counter was incremented and the program continued. If they differed, the application assumed that one of the values had been manually modified and treated the trial information as invalid. Keeping the same value in two different locations made simple counter resets more difficult, although the mechanism was still relatively easy to inspect and bypass by modern standards.
+
+Registration was based on a username and a corresponding activation code. The activation window validated the entered pair and, when accepted, stored the registration information in an encrypted file named `ag_exp.001`. On later launches, the program checked this file before displaying the trial counter. A valid registration allowed the application to start without consuming one of the remaining trial runs.
+
+The trial interface, activation-code generator, encryption routines, and related validation classes are preserved in the source code because they formed part of the original software architecture. They are useful for studying historical shareware protection techniques, but they should not be considered secure licensing methods for current software. The implementation relies on writable Registry entries, local files, reversible custom encryption, and Windows paths that may require elevated permissions on modern systems.
+
+
 ## Windows 11 edition
 
 The modern source trees are not a rewrite. They retain the VB6 architecture and original project format, but repair several faults that became visible during compilation and use on Windows 11.
@@ -226,7 +237,3 @@ Applied Genetics can also register `.pro` files with `AG.exe` and `.agx` files w
 VB6 binary companion files such as `.frx`, `.ctx`, `.pgx` and `.agx` should not be edited as ordinary text. The internal markers in `.pro` files must also remain unchanged because the loader searches for their exact spelling.
 
 The repository is intended to preserve the original application in a form that can still be studied, compiled and used. Any future port to another language or framework should be kept separate from the historical VB6 edition so that the original program and its file formats remain available.
-
-## License
-
-No licence file was found in the archived source packages. Until a repository-level licence is added, the source should be treated as all rights reserved.
