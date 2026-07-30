@@ -1,4 +1,4 @@
-# Applied Genetics 1.2
+# Applied Genetics 1.2 (2007 - 2008)
 
 **A historical Visual Basic 6 desktop environment for interactive DNA/RNA sequence analysis, restriction mapping, motif discovery, codon translation, primer evaluation, and simulated gel electrophoresis.**
 
