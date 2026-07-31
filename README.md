@@ -281,10 +281,13 @@ The original release used a 30-run trial system. Each time the program started, 
 
 The two values were compared at startup. If they matched, the counter was incremented and the program continued. If they differed, the application assumed that one of the values had been manually modified and treated the trial information as invalid. Keeping the same value in two different locations made simple counter resets more difficult, although the mechanism was still relatively easy to inspect and bypass by modern standards.
 
-
-| Ro | En |
+<div align="center">
+	
+| Trial Ro | Trial En |
 |---|---|
 | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/trial%20RO.png) | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/trial%20EN.png) |
+
+</div>
 
 Registration was based on a username and a corresponding activation code. The activation window validated the entered pair and, when accepted, stored the registration information in an encrypted file named `ag_exp.001`. On later launches, the program checked this file before displaying the trial counter. A valid registration allowed the application to start without consuming one of the remaining trial runs.
 
