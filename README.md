@@ -2,6 +2,12 @@
 
 Applied Genetics is a Windows desktop application for working directly with DNA and RNA sequences. It was written in Visual Basic 6 and brings together a sequence editor, restriction-enzyme analysis, codon translation, repeat detection, primer calculations, graphical annotation and a simple electrophoresis-gel simulation.
 
+<hr>
+
+![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/screen%20(VI).jpg)
+
+<hr>
+
 The repository preserves several stages of the project: the older Romanian Windows XP source, Romanian and English editions adapted for Windows 11, the original CD launcher, the file-association utility and the historical trial-key project. The Windows 11 editions keep the original interface, data files and project format while correcting a number of problems that appeared when the old VB6 code was compiled and used on a modern system.
 
 <hr>
