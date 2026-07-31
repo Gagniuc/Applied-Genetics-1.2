@@ -2,19 +2,15 @@
 
 Applied Genetics is a Windows desktop application for working directly with DNA and RNA sequences. It was written in Visual Basic 6.0 and brings together a sequence editor, restriction-enzyme analysis, codon translation, repeat detection, primer calculations, graphical annotation and a simple electrophoresis-gel simulation. Applied Genetics 1.2 was designed around the idea that the structures identified in a nucleotide sequence should not be shown as isolated textual results. Restriction sites, fragments, codons, repeats, inverse sequences and other detected regions are connected to their exact positions in the original sequence and displayed through the same graphical environment. The sequence editor acts as the central working surface. Results are marked directly inside the nucleotide text and are simultaneously projected onto the whole-sequence map, the fragment views and the simulated electrophoresis gel. This linked representation was intended to make the internal organization of a sequence easier to inspect and understand.
 
-<hr>
+
 
 ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/screen%20(VI).jpg)
 
-<hr>
+
 
 The application works with one DNA or RNA sequence at a time and combines editing, analysis and visualization in the same interface. The repository preserves the original Visual Basic 6 project together with the Romanian and English editions adapted for Windows 11, the historical Windows XP source, the CD distribution interface and the associated utilities. The repository preserves several stages of the project: the older Romanian Windows XP source, Romanian and English editions adapted for Windows 11, the original CD launcher, the file-association utility and the historical trial-key project. The Windows 11 editions keep the original interface, data files and project format while correcting a number of problems that appeared when the old VB6 code was compiled and used on a modern system.
 
-<hr>
-
 ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/DSC06704.JPG)
-
-<hr>
 
 Applied Genetics is mainly an interactive teaching and exploratory tool. It works with one nucleotide sequence at a time and shows the result directly in the editor, in a text output window or in one of the graphical views. Its algorithms are based largely on exact string matching. It is not intended to replace present-day sequence-alignment packages, genomic databases or clinical bioinformatics software.
 
