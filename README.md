@@ -73,7 +73,7 @@ One or several enzymes can be selected for the same analysis. The program search
 
 | Enzymes | Gene |
 |---|---|
-| ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/p1.png) | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/p2.png) |
+| ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/p1.jpg) | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/p2.jpg) |
 
 
 </div>
@@ -94,7 +94,7 @@ The search is exhaustive. Its running time rises quickly as the maximum motif le
 
 | Inverse Sequences | Repetitive Sequences |
 |---|---|
-| ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/p3.png) | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/p4.png) |
+| ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/p3.jpg) | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/p4.jpg) |
 
 </div>
 
@@ -142,15 +142,15 @@ The **Restriction Enzymes** tab displays the complete enzyme list together with 
 
 | Restriction Enzymes | Program Colors |
 |---|---|
-| ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/o1.png) | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/o2.png) |
+| ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/o1.jpg) | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/o2.jpg) |
 
 | Program Text | Codons |
 |---|---|
-| ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/o3.png) | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/o4.png) |
+| ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/o3.jpg) | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/o4.jpg) |
 
 | Primers | Visualisation |
 |---|---|
-| ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/o5.png) | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/gif/sequence%20highlighting%20(II).gif) |
+| ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/o5.jpg) | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/gif/sequence%20highlighting%20(II).gif) |
 
 </div>
 
