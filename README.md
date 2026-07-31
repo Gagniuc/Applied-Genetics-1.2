@@ -36,7 +36,6 @@ A sequence can be typed or pasted into the main editor, loaded from an Applied G
 <hr>
 
 
-
 Characters outside the accepted nucleotide alphabet can be located and coloured in red. A cleaning command creates a version of the sequence containing only recognised nucleotide symbols. The importer follows the traditional GenBank layout: it looks for the sequence between `ORIGIN` and `//`, then removes line numbers, spaces and other formatting characters. The original code does not contain a dedicated FASTA parser.
 
 The main areas of the program are summarised below.
@@ -74,9 +73,19 @@ EnzymeName[#]RECOG*NITION
 
 One or several enzymes can be selected for the same analysis. The program searches for exact recognition sequences in both displayed directions, records the sites, calculates the corresponding cut positions and combines the results into an ordered fragment map. Each fragment can then be extracted and described by length and nucleotide composition.
 
+
+<hr>
+
+<div align="center">
+
 | Enzymes | Gene |
 |---|---|
 | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/p1.png) | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/p2.png) |
+
+
+</div>
+
+<hr>
 
 The same result is presented in several forms. Recognition sites and fragment boundaries are coloured in the sequence editor, their positions are drawn on the whole-sequence map, and the calculated fragments are represented as bands in the gel view. The program can display a local gel for one enzyme or a general gel combining several enzymes.
 
@@ -90,9 +99,17 @@ For every match, Applied Genetics records the position and length of the first m
 
 The search is exhaustive. Its running time rises quickly as the maximum motif length increases because the number of possible combinations grows exponentially. The interface shows the current combination, total number of combinations and processing speed, and the Windows 11 edition contains additional cancellation checks so that a long search can be stopped more reliably.
 
+<hr>
+
+<div align="center">
+
 | Inverse Sequences | Repetitive Sequences |
 |---|---|
 | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/p3.png) | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/p4.png) |
+
+</div>
+
+<hr>
 
 The **R.S. / S.R.** module (Repetitive Sequences / Secvențe Repetitive) uses a related generator to find exact tandem repeats. The user chooses the motif-length interval and the allowed number of consecutive repetitions. Matching regions are coloured in the editor and described in OUTPUT. The original algorithm does not allow mismatches, gaps or approximate repeat scoring.
 
@@ -131,6 +148,7 @@ The **Options** window brings together the main configuration settings of Applie
 
 The **Restriction Enzymes** tab displays the complete enzyme list together with each recognition site. The supplied database contains 126 enzymes, and entries can be tested, added or removed directly from this window. The **Program Colors** tab defines the colours used throughout the graphical analyses, including START and STOP codons, genes, repetitive sequences, inverse sequences, normal restriction sites, insertion- and deletion-related sites, the vertical sequence marker, the graphical overview and the simulated gel.
 
+<div align="center">
 
 | Restriction Enzymes | Program Colors |
 |---|---|
@@ -143,6 +161,8 @@ The **Restriction Enzymes** tab displays the complete enzyme list together with 
 | Primers | Visualisation |
 |---|---|
 | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/o5.png) | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/gif/sequence%20highlighting%20(II).gif) |
+
+</div>
 
 
 The **Program Text** tab controls the appearance of both the nucleotide editor and the OUTPUT window. Font family, size, foreground colour, background colour and styles such as bold, italic, underline and strikethrough can be changed independently. The **Codons** tab contains the RNA codon assignments used during translation and allows the mappings for each amino acid to be edited. Translation can be displayed using either one-letter notation, such as `M`, `P` and `Q`, or three-letter notation, such as `Met`, `Pro` and `Gln`.
