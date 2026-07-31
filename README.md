@@ -133,7 +133,8 @@ A second formula includes the sodium concentration:
 Tm = 81.5 + 16.6 × log10([Na+]) + 0.41 × (%G+C) − 675 / n
 ```
 
-Here, `n` is the sequence length and `[Na+]` is expressed in mol/L. The constants used by both equations are editable from the Options window. These calculations reflect the methods implemented in the original program and are not nearest-neighbour thermodynamic calculations.
+Here, `n` is the sequence length and `[Na+]` is expressed in mol/L. The constants used by both equations are editable from the Options window. These calculations reflect the methods implemented in the original program and are not nearest-neighbour thermodynamic calculations. Thus, `[Na+]` is the molar sodium-ion concentration. The default value used by the program is `0.05 mol/L`, corresponding to `50 mM Na+`.
+
 
 ## Graphical views and gel simulation
 
