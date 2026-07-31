@@ -135,13 +135,15 @@ Tm = 81.5 + 16.6 × log10([Na+]) + 0.41 × (%G+C) − 675 / n
 
 Here, `n` is the sequence length and `[Na+]` is expressed in mol/L. The constants used by both equations are editable from the Options window. These calculations reflect the methods implemented in the original program and are not nearest-neighbour thermodynamic calculations. Thus, `[Na+]` is the molar sodium-ion concentration. The default value used by the program is `0.05 mol/L`, corresponding to `50 mM Na+`.
 
+## Integrated graphical representation
+
+The central idea behind Applied Genetics was to connect the different structures detected in a nucleotide sequence within a single graphical environment. Restriction sites, fragments, codons, genes, repeats and inverse sequences are not presented as isolated results; they are linked to their exact positions in the original sequence and represented simultaneously in the text editor, the whole-sequence map and the corresponding graphical views. This connection between the sequence, its annotations and the generated diagrams makes it possible to move from a local result to its wider structural context. The purpose was to provide a clear and intuitive view of how the different elements relate to one another inside the same sequence, rather than displaying them as separate numerical or textual outputs.
 
 ## Graphical views and gel simulation
 
 Applied Genetics produces a compact visual summary of most analyses. The whole-sequence map shows the location of sites, fragments, codons or repeat regions without requiring the entire nucleotide string to fit on screen. Longer result sets, especially inverse-sequence diagrams and individual enzyme gels, are displayed in a separate scrollable window.
 
 The gel view converts calculated fragment lengths into horizontal bands. A time parameter can be changed to alter the apparent migration distance, and information about the enzyme, fragment number and fragment length is displayed while the result is inspected. The view is useful for explaining the relation between cleavage positions and fragment sizes, but it is a simplified graphical model rather than a calibrated simulation of a laboratory gel.
-
 
 ## Options and customization
 
