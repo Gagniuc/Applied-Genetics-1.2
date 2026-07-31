@@ -73,9 +73,6 @@ EnzymeName[#]RECOG*NITION
 
 One or several enzymes can be selected for the same analysis. The program searches for exact recognition sequences in both displayed directions, records the sites, calculates the corresponding cut positions and combines the results into an ordered fragment map. Each fragment can then be extracted and described by length and nucleotide composition.
 
-
-<hr>
-
 <div align="center">
 
 | Enzymes | Gene |
@@ -84,8 +81,6 @@ One or several enzymes can be selected for the same analysis. The program search
 
 
 </div>
-
-<hr>
 
 The same result is presented in several forms. Recognition sites and fragment boundaries are coloured in the sequence editor, their positions are drawn on the whole-sequence map, and the calculated fragments are represented as bands in the gel view. The program can display a local gel for one enzyme or a general gel combining several enzymes.
 
@@ -99,8 +94,6 @@ For every match, Applied Genetics records the position and length of the first m
 
 The search is exhaustive. Its running time rises quickly as the maximum motif length increases because the number of possible combinations grows exponentially. The interface shows the current combination, total number of combinations and processing speed, and the Windows 11 edition contains additional cancellation checks so that a long search can be stopped more reliably.
 
-<hr>
-
 <div align="center">
 
 | Inverse Sequences | Repetitive Sequences |
@@ -108,8 +101,6 @@ The search is exhaustive. Its running time rises quickly as the maximum motif le
 | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/p3.png) | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/p4.png) |
 
 </div>
-
-<hr>
 
 The **R.S. / S.R.** module (Repetitive Sequences / Secvențe Repetitive) uses a related generator to find exact tandem repeats. The user chooses the motif-length interval and the allowed number of consecutive repetitions. Matching regions are coloured in the editor and described in OUTPUT. The original algorithm does not allow mismatches, gaps or approximate repeat scoring.
 
