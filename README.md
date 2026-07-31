@@ -130,6 +130,10 @@ The central idea behind Applied Genetics was to connect the different structures
 
 Applied Genetics produces a compact visual summary of most analyses. The whole-sequence map shows the location of sites, fragments, codons or repeat regions without requiring the entire nucleotide string to fit on screen. Longer result sets, especially inverse-sequence diagrams and individual enzyme gels, are displayed in a separate scrollable window.
 
+<div align="center">
+	<img src="https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/gif/sequence%20highlighting%20(III).gif" />
+</div>
+
 The gel view converts calculated fragment lengths into horizontal bands. A time parameter can be changed to alter the apparent migration distance, and information about the enzyme, fragment number and fragment length is displayed while the result is inspected. The view is useful for explaining the relation between cleavage positions and fragment sizes, but it is a simplified graphical model rather than a calibrated simulation of a laboratory gel.
 
 ## Options and customization
@@ -150,7 +154,7 @@ The **Restriction Enzymes** tab displays the complete enzyme list together with 
 
 | Primers | Visualisation |
 |---|---|
-| ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/o5.jpg) | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/gif/sequence%20highlighting%20(II).gif) |
+| ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/o5.jpg) | ![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/vizualizare%20(II).jpg) |
 
 </div>
 
