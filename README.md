@@ -20,13 +20,22 @@ Applied Genetics is mainly an interactive teaching and exploratory tool. It work
 
 ## General operation
 
-A sequence can be typed or pasted into the main editor, loaded from an Applied Genetics project or imported from a GenBank-style text file. While the sequence is being inspected, the program reports the current selection, its length, the number of `A`, `T`, `C`, `G` and `U` symbols, the nucleotide percentages and the `G+C` content.
-
-The editor is also used as the main annotation surface. Restriction sites, fragments, codons, repeats and other detected regions are marked by changing the foreground or background colour of the corresponding text. A horizontal map below the editor shows where the marked regions occur in relation to the complete sequence.
-
-![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/screen%20(I).jpg)
+A sequence can be typed or pasted into the main editor, loaded from an Applied Genetics project or imported from a GenBank-style text file. While the sequence is being inspected, the program reports the current selection, its length, the number of `A`, `T`, `C`, `G` and `U` symbols, the nucleotide percentages and the `G+C` content. The editor is also used as the main annotation surface. Restriction sites, fragments, codons, repeats and other detected regions are marked by changing the foreground or background colour of the corresponding text. A horizontal map below the editor shows where the marked regions occur in relation to the complete sequence.
 
 <hr>
+
+<div align="left">
+	<details>
+	<summary>Applied Genetics 1.2 [+]</summary>
+		<a href="">
+		    <img src="https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/screen%20(I).jpg" alt="Applied Genetics 1.2">
+		</a>
+	</details>
+</div>
+
+<hr>
+
+
 
 Characters outside the accepted nucleotide alphabet can be located and coloured in red. A cleaning command creates a version of the sequence containing only recognised nucleotide symbols. The importer follows the traditional GenBank layout: it looks for the sequence between `ORIGIN` and `//`, then removes line numbers, spaces and other formatting characters. The original code does not contain a dedicated FASTA parser.
 
@@ -266,9 +275,15 @@ The trial interface, activation-code generator, encryption routines, and related
 The repository also preserves the presentation layer of the original CD edition. The `CD Interfata` directory contains the Visual Basic 6 project used for the disc launcher, while the `img` directory includes the surviving CD covers, disc artwork and other visual material associated with the physical release.
 
 
+
+
 <hr>
 
-![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/setup.png)
+<div align="center">
+		<a href="">
+		    <img src="https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/setup.png" alt="CD Applied Genetics 1.2">
+		</a>
+</div>
 
 <hr>
 
@@ -292,7 +307,15 @@ Together, the launcher source, interface resources, covers and disc artwork pres
 
 The modern source trees are not a rewrite. They retain the VB6 architecture and original project format, but repair several faults that became visible during compilation and use on Windows 11.
 
-![screenshot](https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/load.png)
+<hr>
+
+<div align="center">
+		<a href="">
+		    <img src="https://github.com/Gagniuc/Applied-Genetics-1.2/blob/main/img/load.png" alt="CD Applied Genetics 1.2">
+		</a>
+</div>
+
+<hr>
 
 The form-name casing was made consistent with the internal VB6 attributes, parts of the main layout were widened, and protection was added against the re-entrant calls that could occur when `DoEvents` was used inside the brute-force engine. Long searches now respond better to the Stop command, including during result colouring. A repeat-search accumulator that was not reset correctly was fixed, and boundary checks were added around several `Mid$` operations near the beginning and end of a sequence.
 
@@ -327,7 +350,10 @@ VB6 binary companion files such as `.frx`, `.ctx`, `.pgx` and `.agx` should not 
 
 The repository is intended to preserve the original application in a form that can still be studied, compiled and used. Any future port to another language or framework should be kept separate from the historical VB6 edition so that the original program and its file formats remain available.
 
-## Video demonstration (I)
+## Video demonstration
+
+<details>
+<summary>Video demonstration (I) [+]</summary>
 
 <p align="center">
   <a href="https://www.youtube.com/watch?v=nmyNR0VMKF0">
@@ -343,8 +369,11 @@ The repository is intended to preserve the original application in a form that c
   </a>
 </p>
 
+</details>
 
-## Video demonstration (II)
+
+<details>
+<summary>Video demonstration (II) [+]</summary>
 
 <p align="center">
   <a href="https://www.youtube.com/watch?v=CqIFUx_PaPA">
@@ -359,3 +388,5 @@ The repository is intended to preserve the original application in a form that c
     ▶ Watch the Applied Genetics 1.2 demonstration on YouTube
   </a>
 </p>
+
+</details>
