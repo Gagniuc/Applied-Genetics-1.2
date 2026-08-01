@@ -1,4 +1,4 @@
-# Applied Genetics 1.2 (2007 - 2008)
+# Applied Genetics 1.2 (2007-2008)
 
 Applied Genetics is a Windows desktop application for working directly with DNA and RNA sequences. It was written in Visual Basic 6.0 and brings together a sequence editor, restriction-enzyme analysis, codon translation, repeat detection, primer calculations, graphical annotation and a simple electrophoresis-gel simulation. Applied Genetics 1.2 was designed around the idea that the structures identified in a nucleotide sequence should not be shown as isolated textual results. Restriction sites, fragments, codons, repeats, inverse sequences and other detected regions are connected to their exact positions in the original sequence and displayed through the same graphical environment. The sequence editor acts as the central working surface. Results are marked directly inside the nucleotide text and are simultaneously projected onto the whole-sequence map, the fragment views and the simulated electrophoresis gel. 
 
